@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en-US"prefix="og: http://ogp.me/ns#">
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible"content="IE=edge"/>
 		<meta http-equiv=“Pragma” content=”no-cache”>
 		<meta http-equiv=“Expires” content=”-1″>
 		<meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
-		<link rel="profile"href="http://gmpg.org/xfn/11">
 		<title>Zoom Buttons</title>
 		<style>
 			body {
@@ -39,68 +38,20 @@
 				white-space: normal;
 				cursor: pointer;
 			}
+			ul,li {
+				display:none;
+			}
 		</style>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	</head>
 	<body>
 		<div style="text-align: center;margin-bottom: 100px">
+
 			<p></p>
 			<p>The Ould Sod Virtual Session</p>
 			<p></p>
+
 			<button onclick="copyToClipboard('#mytips')">My Tip Jars</button>
-			<p></p>
-			<button onclick="copyToClipboard('#sessioninfo')">Session Info</button>
-			<button onclick="copyToClipboard('#incipits')">Tune Incipits</button>
-			<button onclick="copyToClipboard('#boxtranscriptions')">B/C Box</button>
-			<p></p>
-			<button onclick="copyToClipboard('#matthews')">Matthew's Waltz</button>
-			<p></p>
-			<p>John Whelan "Taking Time" Session</p>
-			<p></p>
-			<button onclick="copyToClipboard('#jwtips')">John's Tip Jars</button>
-			<button onclick="copyToClipboard('#lastweek')">Last Week Recordings</button>
-			<p></p>
-			<button onclick="copyToClipboard('#muting')">Muting</button>
-			<button onclick="copyToClipboard('#recording')">Record Permission</button>
-			<p></p>
-			<button onclick="copyToClipboard('#signup')">Taking Time Signup</button>
-			<button onclick="copyToClipboard('#mastersessions')">Master Sessions</button>
-			<p></p>
-			<button onclick="copyToClipboard('#swannanoa')">Swannanoa</button>
-			<button onclick="copyToClipboard('#oflahertys')">O'Flaherty's</button>
-			<p>Tunes</p>
-			<button onclick="copyToClipboard('#thelondonlasses')">The London Lasses</button>
-			<button onclick="copyToClipboard('#themaidofmtkisco')">The Maid of Mt. Kisco</button>
-			<p></p>
-			<button onclick="copyToClipboard('#theboysofbluehill')">The Boys of Bluehill</button>
-			<button onclick="copyToClipboard('#dunphys')">Dunphy's</button>
-			<button onclick="copyToClipboard('#thethames')">The Thames</button>
-			<button onclick="copyToClipboard('#horsekeanes')">Horse Keane's</button>
-			<p></p>
-			<button onclick="copyToClipboard('#thewicklow')">The Wicklow</button>
-			<button onclick="copyToClipboard('#myballingarrylady')">My Ballingarry Lady</button>
-			<button onclick="copyToClipboard('#fannypower')">Fanny Power</button>
-			<button onclick="copyToClipboard('#sibheagsimor')">Si Bheag, Si Mor</button>
-			<button onclick="copyToClipboard('#thetailorstwist')">The Tailor's Twist</button>
-		</div>
-		<div style="display:none">
-			<ul id="muting">
-				<li>Welcome everyone!</li>
-				<li></li>
-				<li>Please do your best to keep your microphones muted when John is playing.</li>
-				<li></li>
-				<li>If you accidentally get unmuted during one of John's sets, I'll take care of muting you.</li>
-			</ul>
-			<ul id="recording">
-				<li>You can now record locally.</li>
-			</ul>
-			<ul id="lastweek">
-				<li>You may download the last week's "Taking Time" tune teaching and session recordings at:</li>
-				<li></li>
-				<li>http://michaeleskin.com/takingtime</li>
-				<li></li>
-				<li>The recordings from last week will only be available until tomorrow morning, then replaced with tonight's tune teaching and "Taking Time" recordings.</li>
-			</ul>
 			<ul id="mytips">
 				<li>This session is always free of course, but I always greatly appreciate any tips to help with the Zoom account and other costs.</li>
 				<li></li>
@@ -110,11 +61,44 @@
 				<li>Venmo: @MichaelEskin</li>
 				<li>Zelle: 6193681854</li>
 			</ul>
-			<ul id="muting">
-				<li>Please do your best to keep your microphones muted when John is playing.</li>
+
+			<p></p>
+
+			<button onclick="copyToClipboard('#sessioninfo')">Session Info</button>
+			<ul id="sessioninfo">
+				<li>The Ould Sod Virtual Session on Zoom</li>
 				<li></li>
-				<li>If you accidentally get unmuted during one of John's sets, I'll take care of muting you.</li>
+				<li>Zoom link and other info on optimal Zoom settings at:</li>
+				<li>http://michaeleskin.com/session</li>
 			</ul>
+
+			<button onclick="copyToClipboard('#incipits')">Tune Incipits</button>
+			<ul id="incipits">
+				<li>Incipits:</li>
+				<li>http://michaeleskin.com/handouts/incipits.pdf</li>
+			</ul>
+
+			<button onclick="copyToClipboard('#boxtranscriptions')">B/C Box</button>
+			<ul id="boxtranscriptions">
+				<li>B/C Accordion Bass/Chord Transcriptions:</li>
+				<li></li>
+				<li>Free PDF ebook with 50 tunes in multiple styles with bass and chord annotations for B/C box for players who are learning to play the basses:</li>
+				<li>http://michaeleskin.com/box</li>
+			</ul>
+
+			<p></p>
+
+			<button onclick="copyToClipboard('#matthews')">Matthew's Waltz</button>
+			<ul id="matthews">
+				<li>Matthew's Waltz (Josephine Marsh)</li>
+				<li>http://michaeleskin.com/handouts/matthews.pdf</li>
+			</ul>
+
+			<p></p>
+			<p>John Whelan "Taking Time" Session</p>
+			<p></p>
+
+			<button onclick="copyToClipboard('#jwtips')">John's Tip Jars</button>
 			<ul id="jwtips">
 				<li>Please support John's "Taking Time" events through your tips!</li>
 				<li></li>
@@ -132,108 +116,151 @@
 				<li>28333 137th Ave. SW</li>
 				<li>Vashon, WA 98070</li>
 			</ul>
+
+			<button onclick="copyToClipboard('#lastweek')">Last Week Recordings</button>
+			<ul id="lastweek">
+				<li>You may download the last week's "Taking Time" tune teaching and session recordings at:</li>
+				<li></li>
+				<li>http://michaeleskin.com/takingtime</li>
+				<li></li>
+				<li>The recordings from last week will only be available until tomorrow morning, then replaced with tonight's tune teaching and "Taking Time" recordings.</li>
+			</ul>
+
+			<p></p>
+
+			<button onclick="copyToClipboard('#muting')">Muting</button>
+			<ul id="muting">
+				<li>Please do your best to keep your microphones muted when John is playing.</li>
+				<li></li>
+				<li>If you accidentally get unmuted during one of John's sets, I'll take care of muting you.</li>
+			</ul>
+
+			<button onclick="copyToClipboard('#recording')">Record Permission</button>
+			<ul id="recording">
+				<li>You can now record locally.</li>
+			</ul>
+
+			<p></p>
+
+			<button onclick="copyToClipboard('#signup')">Taking Time Signup</button>
+			<ul id="signup">
+				<li>John Whelan's "Taking Time" page:</li>
+				<li></li>
+				<li>http://johnwhelanmusic.com/slow-session/</li>
+			</ul>
+
+			<button onclick="copyToClipboard('#mastersessions')">Master Sessions</button>
+			<ul id="mastersessions">
+				<li>John Whelan's Master Sessions:</li>
+				<li></li>
+				<li>http://johnwhelanmusic.com/master-sessions/</li>
+			</ul>
+
+			<p></p>
+
+			<button onclick="copyToClipboard('#swannanoa')">Swannanoa</button>
 			<ul id="swannanoa">
 				<li>Swannanoa Gathering 2021 (Online this year)</li>
 				<li></li>
 				<li>July 11th - 16th, 2021</li>
 				<li>https://swangathering.com/catalog/cl/celtic-week/</li>
 			</ul>
+
+			<button onclick="copyToClipboard('#oflahertys')">O'Flaherty's</button>
 			<ul id="oflahertys">
 				<li>O'Flaherty's Irish Music Retreat (In-person)</li>
 				<li></li>
 				<li>October 21st - 24th, 2021</li>
 				<li>https://oflahertyretreat.org/</li>
 			</ul>
-			<ul id="sessioninfo">
-				<li>The Ould Sod Virtual Session on Zoom</li>
-				<li></li>
-				<li>Zoom link and other info on optimal Zoom settings at:</li>
-				<li>http://michaeleskin.com/session</li>
-			</ul>
-			<ul id="incipits">
-				<li>Incipits:</li>
-				<li>http://michaeleskin.com/handouts/incipits.pdf</li>
-			</ul>
-			<ul id="boxtranscriptions">
-				<li>B/C Accordion Bass/Chord Transcriptions:</li>
-				<li></li>
-				<li>Free PDF ebook with 50 tunes in multiple styles with bass and chord annotations for B/C box for players who are learning to play the basses:</li>
-				<li>http://michaeleskin.com/box</li>
-			</ul>
-			<ul id="signup">
-				<li>John Whelan's "Taking Time" page:</li>
-				<li></li>
-				<li>http://johnwhelanmusic.com/slow-session/</li>
-			</ul>
-			<ul id="mastersessions">
-				<li>John Whelan's Master Sessions:</li>
-				<li></li>
-				<li>http://johnwhelanmusic.com/master-sessions/</li>
-			</ul>
-			<ul id="theboysofbluehill">
-				<li>The Boys of Bluehill</li>
-				<li>http://michaeleskin.com/transcriptions/boys_of_bluehill_bc.pdf</li>
-			</ul>
-			<ul id="dunphys">
-				<li>Dunphy's</li>
-				<li>http://michaeleskin.com/transcriptions/dunphys_bc.pdf</li>
-			</ul>
-			<ul id="horsekeanes">
-				<li>Horse Keane's</li>
-				<li>http://michaeleskin.com/transcriptions/horse_keanes_bc.pdf</li>
-			</ul>
-			<ul id="thethames">
-				<li>The Thames</li>
-				<li>http://michaeleskin.com/transcriptions/thames_bc.pdf</li>
-			</ul>
-			<ul id="thewicklow">
-				<li>The Wicklow</li>
-				<li>http://michaeleskin.com/transcriptions/wicklow_bc.pdf</li>
-			</ul>
-			<ul id="myballingarrylady">
-				<li>My Ballingarry Lady</li>
-				<li>http://michaeleskin.com/transcriptions/my_ballingarry_lady_bc.pdf</li>
-			</ul>
-			<ul id="fannypower">
-				<li>Fanny Power</li>
-				<li>http://michaeleskin.com/transcriptions/fanny_power_bc.pdf</li>
-			</ul>
-			<ul id="sibheagsimor">
-				<li>Si Bheag, Si Mor</li>
-				<li>http://michaeleskin.com/transcriptions/si_beag_si_mor_bc.pdf</li>
-			</ul>
-			<ul id="thetailorstwist">
-				<li>The Tailor's Twist</li>
-				<li>http://michaeleskin.com/transcriptions/tailors_twist_bc.pdf</li>
-			</ul>
-			<ul id="themaidofmtkisco">
-				<li>The Maid of Mt. Kisco</li>
-				<li>http://michaeleskin.com/handouts/the_maid_of_mt_kisco.pdf</li>
-			</ul>
+
+			<p>Tunes</p>
+
+			<button onclick="copyToClipboard('#thelondonlasses')">The London Lasses</button>
 			<ul id="thelondonlasses">
 				<li>The London Lasses</li>
 				<li>http://michaeleskin.com/handouts/the_london_lasses.pdf</li>
 			</ul>
-			<ul id="matthews">
-				<li>Matthew's Waltz (Josephine Marsh)</li>
-				<li>http://michaeleskin.com/handouts/matthews.pdf</li>
+
+			<button onclick="copyToClipboard('#themaidofmtkisco')">The Maid of Mt. Kisco</button>
+			<ul id="themaidofmtkisco">
+				<li>The Maid of Mt. Kisco</li>
+				<li>http://michaeleskin.com/handouts/the_maid_of_mt_kisco.pdf</li>
 			</ul>
+
+			<p></p>
+
+			<button onclick="copyToClipboard('#theboysofbluehill')">The Boys of Bluehill</button>
+			<ul id="theboysofbluehill">
+				<li>The Boys of Bluehill</li>
+				<li>http://michaeleskin.com/transcriptions/boys_of_bluehill_bc.pdf</li>
+			</ul>
+
+			<button onclick="copyToClipboard('#dunphys')">Dunphy's</button>
+			<ul id="dunphys">
+				<li>Dunphy's</li>
+				<li>http://michaeleskin.com/transcriptions/dunphys_bc.pdf</li>
+			</ul>
+
+			<button onclick="copyToClipboard('#thethames')">The Thames</button>
+			<ul id="thethames">
+				<li>The Thames</li>
+				<li>http://michaeleskin.com/transcriptions/thames_bc.pdf</li>
+			</ul>
+
+			<button onclick="copyToClipboard('#horsekeanes')">Horse Keane's</button>
+			<ul id="horsekeanes">
+				<li>Horse Keane's</li>
+				<li>http://michaeleskin.com/transcriptions/horse_keanes_bc.pdf</li>
+			</ul>
+
+			<p></p>
+
+			<button onclick="copyToClipboard('#thewicklow')">The Wicklow</button>
+			<ul id="thewicklow">
+				<li>The Wicklow</li>
+				<li>http://michaeleskin.com/transcriptions/wicklow_bc.pdf</li>
+			</ul>
+
+			<button onclick="copyToClipboard('#myballingarrylady')">My Ballingarry Lady</button>
+			<ul id="myballingarrylady">
+				<li>My Ballingarry Lady</li>
+				<li>http://michaeleskin.com/transcriptions/my_ballingarry_lady_bc.pdf</li>
+			</ul>
+
+			<button onclick="copyToClipboard('#fannypower')">Fanny Power</button>
+			<ul id="fannypower">
+				<li>Fanny Power</li>
+				<li>http://michaeleskin.com/transcriptions/fanny_power_bc.pdf</li>
+			</ul>
+
+			<button onclick="copyToClipboard('#sibheagsimor')">Si Bheag, Si Mor</button>
+			<ul id="sibheagsimor">
+				<li>Si Bheag, Si Mor</li>
+				<li>http://michaeleskin.com/transcriptions/si_beag_si_mor_bc.pdf</li>
+			</ul>
+
+			<button onclick="copyToClipboard('#thetailorstwist')">The Tailor's Twist</button>
+			<ul id="thetailorstwist">
+				<li>The Tailor's Twist</li>
+				<li>http://michaeleskin.com/transcriptions/tailors_twist_bc.pdf</li>
+			</ul>
+
 		</div>
 	</body>
 	<script>
 	function copyToClipboard(element) {
 		var thelist = $(element).html();
 		thelist = thelist.replace(/\s+<li>/g, '');
-			thelist = thelist.replace(/<\/?li>/g, '\r');
-			thelist = thelist.replace(/\t/g, '');
-
-			$('.auto').val(thelist);
-			var $temp = $("<textarea>");
-			$("body").append($temp);
-			$temp.val(thelist).select();
-			document.execCommand('copy');
-			$temp.remove();
-		}
-		;
+				thelist = thelist.replace(/<\/?li>/g, '\r');
+				thelist = thelist.replace(/\t/g, '');
+				$('.auto').val(thelist);
+				var $temp = $("<textarea>");
+				$("body").append($temp);
+				$temp.val(thelist).select();
+				document.execCommand('copy');
+				$temp.remove();
+			}
+			;
 		</script>
 	</html>
