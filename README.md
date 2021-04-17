@@ -23,17 +23,21 @@ To modify to your requirements there are two areas, the buttons and the text tha
 
 The buttons look like this in the markup:
 
+<!--
 <button onclick="copyToClipboard('#sessioninfo')">Session Info</button>
+-->
 
 and each button pairs up with a invisible <ul> tag with the id sent to the copyToClipboard() function:
 
+<!--
 <ul id="sessioninfo">
     <li>The Ould Sod Virtual Session on Zoom</li>
     <li></li>
     <li>Zoom link and other info on optimal Zoom settings at:</li>
    <li>http://michaeleskin.com/session</li>
 </ul>
-
+-->
+    
 copyToClipboard() reads the contents of the <ul>, formats the text, creates a temporary text area, pastes the text into the text area, then copies it to the system clipboard, then destroys the text area.
 
 You should not have to modify this function, only the buttons and <ul> lists to create your own buttons. 
