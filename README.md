@@ -21,14 +21,16 @@ I've tested it with Firefox and Chrome on Windows and on iOS Safari, so should w
 
 # Customization 
 
-To customize zoombuttons.html to your requirements there are two areas, the buttons and the text that is copied to the clipboard by the buttons.
+It's very simple to customize or extend zoombuttons.html to meet your requirements.
+
+To customize zoombuttons.html to your requirements there are two areas that need to be modified, the buttons and the text that is copied to the clipboard by the buttons.
 
 Each button has an onclick handler that calls a function called "copyToClipboard()" that includes the absolute ID of a ul element that in turn contains one or more li elements.
-
-and each button pairs up with a invisible ul tag with the id sent to the copyToClipboard() function:
     
-copyToClipboard() reads the contents of the ul, formats the text with each li element turned into a line of text, creates a temporary text area, pastes the text into the text area, then copies it to the system clipboard, then destroys the text area.
+copyToClipboard() reads the contents of the ul with the absolute ID passed in, formats the text with each li element turned into a line of text, creates a temporary text area, pastes the text into the text area, copies it to the system clipboard, then destroys the text area.
 
-You should not have to modify this function, only the buttons and ul lists to create your own buttons. 
+At that point, the text can be pasted into Zoom or any other program.
 
-If you walk through the page, it's very simple to modify or extend to add additional buttons.
+You should not have to modify the copyToClipboard() function, only the buttons and ul lists to create your own buttons. 
+
+If you walk through the page, 
