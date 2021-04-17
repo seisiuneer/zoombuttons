@@ -32,5 +32,3 @@ copyToClipboard() reads the contents of the ul with the absolute ID passed in, f
 At that point, the text can be pasted into Zoom or any other program.
 
 You should not have to modify the copyToClipboard() function, only the buttons and ul lists to create your own buttons. 
-
-If you walk through the page, 
