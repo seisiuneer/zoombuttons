@@ -13,6 +13,8 @@ To help automate this process, I've built a little web-based tool that you are w
 
 It's essentially a button board that copies text onto the clipboard, which you can then paste into the Zoom chat.
 
+Other than including jQuery, the utility is completely self-contained.
+
 # Installing
 
 Since it's a web page, you'll either need to host zoombuttons.html somewhere, or could just run it locally from your computer.  
