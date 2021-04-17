@@ -15,11 +15,13 @@ It's essentially a button board that copies text onto the clipboard, which you c
 
 # Installing
 
-Since it's a web page, you'll either need to host it somewhere, or could just run it locally from your computer.  
+Since it's a web page, you'll either need to host zoombuttons.html somewhere, or could just run it locally from your computer.  
 
 I've tested it with Firefox and Chrome on Windows and on iOS Safari, so should work on Safari on Mac as well.
 
-To modify to your requirements there are two areas, the buttons and the text that is copied to the clipboard by the buttons.
+# Customization 
+
+To customize zoombuttons.html to your requirements there are two areas, the buttons and the text that is copied to the clipboard by the buttons.
 
 Each button has an onclick handler that calls a function called "copyToClipboard()" that includes the absolute ID of a ul element that in turn contains one or more li elements.
 
