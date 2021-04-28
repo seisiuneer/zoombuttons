@@ -6,6 +6,23 @@
 		<meta http-equiv=“Pragma” content=”no-cache”>
 		<meta http-equiv=“Expires” content=”-1″>
 		<meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
+		<link rel="apple-touch-icon" sizes="57x57" href="http://michaeleskin.com/img/zoombuttons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="http://michaeleskin.com/img/zoombuttons/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="http://michaeleskin.com/img/zoombuttons/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="http://michaeleskin.com/img/zoombuttons/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="http://michaeleskin.com/img/zoombuttons/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="http://michaeleskin.com/img/zoombuttons/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="http://michaeleskin.com/img/zoombuttons/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="http://michaeleskin.com/img/zoombuttons/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="http://michaeleskin.com/img/zoombuttons/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="http://michaeleskin.com/img/zoombuttons/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="http://michaeleskin.com/img/zoombuttons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="http://michaeleskin.com/img/zoombuttons/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="http://michaeleskin.com/img/zoombuttons/favicon-16x16.png">
+		<link rel="manifest" href="http://michaeleskin.com/img/zoombuttons/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="http://michaeleskin.com/img/zoombuttons/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
 		<title>Zoom Buttons</title>
 		<style>
 			body {
@@ -35,6 +52,7 @@
 				width: auto;
 				border-radius: 8px;
 				padding: 10px;
+				margin:5px;
 				white-space: normal;
 				cursor: pointer;
 			}
@@ -46,14 +64,19 @@
 	</head>
 	<body>
 		<div style="text-align: center;margin-bottom: 100px">
-
 			<p></p>
 			<p>The Ould Sod Virtual Session</p>
 			<p></p>
-
-			<button onclick="copyToClipboard('#mytips')">My Tip Jars</button>
-			<ul id="mytips">
-				<li>This session is always free of course, but I always greatly appreciate any tips to help with the Zoom account and other costs.</li>
+			<button onclick="copyToClipboard('#sessioninfo')">Session Info</button>
+			<ul id="sessioninfo">
+				<li>The Ould Sod Virtual Session on Zoom</li>
+				<li></li>
+				<li>Weekly session Zoom link and other info on optimal Zoom settings at:</li>
+				<li>http://michaeleskin.com/session</li>
+			</ul>
+			<button onclick="copyToClipboard('#sessiontips')">Tips</button>
+			<ul id="sessiontips">
+				<li>This session is always free, and I appreciate any tips to help pay for the Zoom account and other costs.</li>
 				<li></li>
 				<li>Here are my online tip jars:</li>
 				<li></li>
@@ -61,23 +84,46 @@
 				<li>Venmo: @MichaelEskin</li>
 				<li>Zelle: 6193681854</li>
 			</ul>
-
 			<p></p>
-
-			<button onclick="copyToClipboard('#sessioninfo')">Session Info</button>
-			<ul id="sessioninfo">
-				<li>The Ould Sod Virtual Session on Zoom</li>
+			<button onclick="copyToClipboard('#covidbracelets')">COVID-19 Bracelets</button>
+			<ul id="covidbracelets">
+				<li>Rubber COVID-19 Vaccination Bracelets:</li>
 				<li></li>
-				<li>Zoom link and other info on optimal Zoom settings at:</li>
-				<li>http://michaeleskin.com/session</li>
+				<li>https://www.amazon.com/gp/product/B08ZS3MXGV/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1</li>
 			</ul>
-
+			<button onclick="copyToClipboard('#onairlights')">On-Air Lights</button>
+			<ul id="onairlights">
+				<li>On-Air Rechargeable Lights:</li>
+				<li></li>
+				<li>https://www.amazon.com/dp/B08HN7XHM4/ref=nav_timeline_asin?_encoding=UTF8&psc=1</li>
+			</ul>
+			<button onclick="copyToClipboard('#zoomhardware')">Zoom Audio Setup</button>
+			<ul id="zoomhardware">
+				<li>My iPad-based Zoom audio processor and system configuration:</li>
+				<li>http://michaeleskin.com/zoom</li>
+			</ul>
+			<p></p>
+			<button onclick="copyToClipboard('#myemail')">My Email</button>
+			<ul id="myemail">
+				<li>My email address:</li>
+				<li>seisiuneer@gmail.com</li>
+			</ul>
+			<button onclick="copyToClipboard('#mywebsite')">My Website</button>
+			<ul id="mywebsite">
+				<li>Please visit my home page:</li>
+				<li>http://michaeleskin.com</li>
+			</ul>
+			<button onclick="copyToClipboard('#appcordions')">Appcordions</button>
+			<ul id="appcordions">
+				<li>My traditional musical instrument app catalog:</li>
+				<li>http://appcordions.com</li>
+			</ul>
+			<p></p>
 			<button onclick="copyToClipboard('#incipits')">Tune Incipits</button>
 			<ul id="incipits">
-				<li>Incipits:</li>
+				<li>Cheat sheet with the start of 1600+ Tunes:</li>
 				<li>http://michaeleskin.com/handouts/incipits.pdf</li>
 			</ul>
-
 			<button onclick="copyToClipboard('#boxtranscriptions')">B/C Box</button>
 			<ul id="boxtranscriptions">
 				<li>B/C Accordion Bass/Chord Transcriptions:</li>
@@ -85,19 +131,101 @@
 				<li>Free PDF ebook with 50 tunes in multiple styles with bass and chord annotations for B/C box for players who are learning to play the basses:</li>
 				<li>http://michaeleskin.com/box</li>
 			</ul>
-
 			<p></p>
-
 			<button onclick="copyToClipboard('#matthews')">Matthew's Waltz</button>
 			<ul id="matthews">
 				<li>Matthew's Waltz (Josephine Marsh)</li>
 				<li>http://michaeleskin.com/handouts/matthews.pdf</li>
 			</ul>
-
+			<button onclick="copyToClipboard('#dawnchorus')">Dawn Chorus Set</button>
+			<ul id="dawnchorus">
+				<li>The Dawn Chorus / The One that was Lost / The Castlebar Races</li>
+				<li>http://michaeleskin.com/handouts/ship_in_the_clouds_dawn_chorus_set.pdf</li>
+				<li></li>
+				<li>From the group "Ship in the Clouds"</li>
+				<li>https://shipintheclouds.bandcamp.com/track/the-dawn-chorus-the-one-that-was-lost-the-castlebar-races</li>
+			</ul>
+			<button onclick="copyToClipboard('#freddykimmels')">Freddy Kimmel's</button>
+			<ul id="freddykimmels">
+				<li>Freddy Kimmel's</li>
+				<li>http://michaeleskin.com/transcriptions/freddy_kimmels.pdf</li>
+			</ul>
+			<button onclick="copyToClipboard('#freddykimmelsbc')">Freddy Kimmel's BC</button>
+			<ul id="freddykimmelsbc">
+				<li>Freddy Kimmel's with bass and chords</li>
+				<li>http://michaeleskin.com/transcriptions/freddy_kimmels_bc.pdf</li>
+			</ul>
+			<p></p>
+			<p>Tin Whistle Class</p>
+			<p></p>
+			<button onclick="copyToClipboard('#whistleclassinfo')">Class Info</button>
+			<ul id="whistleclassinfo">
+				<li>Tin Whistle Classes on Zoom</li>
+				<li></li>
+				<li>Weekly class Zoom link and links to handouts:</li>
+				<li>http://michaeleskin.com/whistle</li>
+			</ul>
+			<button onclick="copyToClipboard('#whistletips')">Donations</button>
+			<ul id="whistletips">
+				<li>I appreciate any donations, suggested $10/class.</li>
+				<li></li>
+				<li>Here are my online tip jars:</li>
+				<li></li>
+				<li>PayPal: https://paypal.me/MichaelEskin</li>
+				<li>Venmo: @MichaelEskin</li>
+				<li>Zelle: 6193681854</li>
+			</ul>
+			<button onclick="copyToClipboard('#transcriptioninfo')">Transcription Info</button>
+			<ul id="transcriptioninfo">
+				<li>How I create PDF tune transcriptions using ABC and online tools:</li>
+				<li></li>
+				<li>http://michaeleskin.com/transcribe</li>
+			</ul>
+			<p></p>
+			<button onclick="copyToClipboard('#kesh')">Kesh</button>
+			<ul id="kesh">
+				<li>Kesh (jig)</li>
+				<li>http://michaeleskin.com/handouts/kesh.pdf</li>
+			</ul>
+			<button onclick="copyToClipboard('#outontheocean')">Out on the Ocean</button>
+			<ul id="outontheocean">
+				<li>Out on the Ocean (jig)</li>
+				<li>http://michaeleskin.com/handouts/out_on_the_ocean.pdf</li>
+			</ul>
+			<button onclick="copyToClipboard('#thepeelersjacket')">The Peeler's Jacket</button>
+			<ul id="thepeelersjacket">
+				<li>The Peeler's Jacket (reel)</li>
+				<li>http://michaeleskin.com/handouts/the_peelers_jacket.pdf</li>
+			</ul>
+			<button onclick="copyToClipboard('#thetornjacket')">The Torn Jacket</button>
+			<ul id="thetornjacket">
+				<li>The Torn Jacket (reel)</li>
+				<li>http://michaeleskin.com/handouts/the_torn_jacket.pdf</li>
+			</ul>			
+			<p></p>
+			<button onclick="copyToClipboard('#wards')">Jimmy Ward's</button>
+			<ul id="wards">
+				<li>Jimmy Wards (jig)</li>
+				<li>http://michaeleskin.com/handouts/jimmy_wards.pdf</li>
+			</ul>
+			<button onclick="copyToClipboard('#matthews')">Matthew's Waltz</button>
+			<ul id="matthews">
+				<li>Matthew's Waltz (Josephine Marsh)</li>
+				<li>http://michaeleskin.com/handouts/matthews.pdf</li>
+			</ul>
+			<button onclick="copyToClipboard('#musicintheglen')">Music in the Glen</button>
+			<ul id="musicintheglen">
+				<li>Music in the Glen (reel)</li>
+				<li>http://michaeleskin.com/handouts/music_in_the_glen.pdf</li>
+			</ul>			
+			<button onclick="copyToClipboard('#thelondonlassesw')">The London Lasses</button>
+			<ul id="thelondonlassesw">
+				<li>The London Lasses (reel)</li>
+				<li>http://michaeleskin.com/handouts/the_london_lasses_whistle.pdf</li>
+			</ul>
 			<p></p>
 			<p>John Whelan "Taking Time" Session</p>
 			<p></p>
-
 			<button onclick="copyToClipboard('#jwtips')">John's Tip Jars</button>
 			<ul id="jwtips">
 				<li>Please support John's "Taking Time" events through your tips!</li>
@@ -116,48 +244,56 @@
 				<li>28333 137th Ave. SW</li>
 				<li>Vashon, WA 98070</li>
 			</ul>
-
-			<button onclick="copyToClipboard('#lastweek')">Last Week Recordings</button>
-			<ul id="lastweek">
+			<button onclick="copyToClipboard('#jwlastweek')">Last Week's Recordings</button>
+			<ul id="jwlastweek">
 				<li>You may download the last week's "Taking Time" tune teaching and session recordings at:</li>
 				<li></li>
 				<li>http://michaeleskin.com/takingtime</li>
 				<li></li>
 				<li>The recordings from last week will only be available until tomorrow morning, then replaced with tonight's tune teaching and "Taking Time" recordings.</li>
 			</ul>
-
+			<button onclick="copyToClipboard('#iosdownload')">iOS Downloads</button>
+			<ul id="iosdownload">
+				<li>Info on downloading the recordings to an iPhone/iPad:</li>
+				<li></li>
+				<li>https://www.iphonehacks.com/2019/03/download-music-videos-iphone-ipad.html</li>
+				<li></li>
+				<li>https://www.iphonehacks.com/2019/08/how-download-free-music-iphone.html</li>
+				<li></li>
+				<li>I use VLC on iOS:</li>
+				<li></li>
+				<li>https://apps.apple.com/us/app/vlc-for-mobile/id650377962</li>
+			</ul>
 			<p></p>
-
 			<button onclick="copyToClipboard('#muting')">Muting</button>
 			<ul id="muting">
 				<li>Please do your best to keep your microphones muted when John is playing.</li>
 				<li></li>
 				<li>If you accidentally get unmuted during one of John's sets, I'll take care of muting you.</li>
 			</ul>
-
 			<button onclick="copyToClipboard('#recording')">Record Permission</button>
 			<ul id="recording">
 				<li>You can now record locally.</li>
 			</ul>
-
 			<p></p>
-
 			<button onclick="copyToClipboard('#signup')">Taking Time Signup</button>
 			<ul id="signup">
 				<li>John Whelan's "Taking Time" page:</li>
 				<li></li>
 				<li>http://johnwhelanmusic.com/slow-session/</li>
 			</ul>
-
 			<button onclick="copyToClipboard('#mastersessions')">Master Sessions</button>
 			<ul id="mastersessions">
 				<li>John Whelan's Master Sessions:</li>
 				<li></li>
 				<li>http://johnwhelanmusic.com/master-sessions/</li>
+				<li></li>
+				<li>Next event:</li>
+				<li></li>
+				<li>Whelan Master Session 24: Martin Hayes</li>
+				<li>Saturday, May 1, 2pm Pacific/5pm Eastern/10pm Ireland/England</li>
 			</ul>
-
 			<p></p>
-
 			<button onclick="copyToClipboard('#swannanoa')">Swannanoa</button>
 			<ul id="swannanoa">
 				<li>Swannanoa Gathering 2021 (Online this year)</li>
@@ -165,7 +301,6 @@
 				<li>July 11th - 16th, 2021</li>
 				<li>https://swangathering.com/catalog/cl/celtic-week/</li>
 			</ul>
-
 			<button onclick="copyToClipboard('#oflahertys')">O'Flaherty's</button>
 			<ul id="oflahertys">
 				<li>O'Flaherty's Irish Music Retreat (In-person)</li>
@@ -173,94 +308,155 @@
 				<li>October 21st - 24th, 2021</li>
 				<li>https://oflahertyretreat.org/</li>
 			</ul>
-
-			<p>Tunes</p>
-
+			<p>John Whelan Tunes</p>
+			<button onclick="copyToClipboard('#latearrival')">Late Arrival</button>
+			<ul id="latearrival">
+				<li>For those of you who recently arrived, here is today's tune:</li>
+				<li></li>
+			</ul>
+			<p></p>
+			<button onclick="copyToClipboard('#croninsrambles')">Cronin's Rambles</button>
+			<ul id="croninsrambles">
+				<li>Cronin's Rambles (hornpipe)</li>
+				<li>http://michaeleskin.com/handouts/cronins_rambles.pdf</li>
+			</ul>
+			<button onclick="copyToClipboard('#carraroe')">The Carraroe</button>
+			<ul id="carraroe">
+				<li>The Carraroe (jig)</li>
+				<li>http://michaeleskin.com/handouts/the_carraroe.pdf</li>
+			</ul>
 			<button onclick="copyToClipboard('#thelondonlasses')">The London Lasses</button>
 			<ul id="thelondonlasses">
-				<li>The London Lasses</li>
+				<li>The London Lasses (reel)</li>
 				<li>http://michaeleskin.com/handouts/the_london_lasses.pdf</li>
 			</ul>
-
 			<button onclick="copyToClipboard('#themaidofmtkisco')">The Maid of Mt. Kisco</button>
 			<ul id="themaidofmtkisco">
-				<li>The Maid of Mt. Kisco</li>
+				<li>The Maid of Mt. Kisco (reel)</li>
 				<li>http://michaeleskin.com/handouts/the_maid_of_mt_kisco.pdf</li>
 			</ul>
-
-			<p></p>
-
-			<button onclick="copyToClipboard('#theboysofbluehill')">The Boys of Bluehill</button>
-			<ul id="theboysofbluehill">
-				<li>The Boys of Bluehill</li>
-				<li>http://michaeleskin.com/transcriptions/boys_of_bluehill_bc.pdf</li>
-			</ul>
-
-			<button onclick="copyToClipboard('#dunphys')">Dunphy's</button>
-			<ul id="dunphys">
-				<li>Dunphy's</li>
-				<li>http://michaeleskin.com/transcriptions/dunphys_bc.pdf</li>
-			</ul>
-
-			<button onclick="copyToClipboard('#thethames')">The Thames</button>
-			<ul id="thethames">
-				<li>The Thames</li>
-				<li>http://michaeleskin.com/transcriptions/thames_bc.pdf</li>
-			</ul>
-
-			<button onclick="copyToClipboard('#horsekeanes')">Horse Keane's</button>
-			<ul id="horsekeanes">
-				<li>Horse Keane's</li>
-				<li>http://michaeleskin.com/transcriptions/horse_keanes_bc.pdf</li>
-			</ul>
-
-			<p></p>
-
-			<button onclick="copyToClipboard('#thewicklow')">The Wicklow</button>
-			<ul id="thewicklow">
-				<li>The Wicklow</li>
-				<li>http://michaeleskin.com/transcriptions/wicklow_bc.pdf</li>
-			</ul>
-
 			<button onclick="copyToClipboard('#myballingarrylady')">My Ballingarry Lady</button>
 			<ul id="myballingarrylady">
-				<li>My Ballingarry Lady</li>
+				<li>My Ballingarry Lady (waltz)</li>
 				<li>http://michaeleskin.com/transcriptions/my_ballingarry_lady_bc.pdf</li>
 			</ul>
-
-			<button onclick="copyToClipboard('#fannypower')">Fanny Power</button>
-			<ul id="fannypower">
-				<li>Fanny Power</li>
-				<li>http://michaeleskin.com/transcriptions/fanny_power_bc.pdf</li>
-			</ul>
-
-			<button onclick="copyToClipboard('#sibheagsimor')">Si Bheag, Si Mor</button>
-			<ul id="sibheagsimor">
-				<li>Si Bheag, Si Mor</li>
-				<li>http://michaeleskin.com/transcriptions/si_beag_si_mor_bc.pdf</li>
-			</ul>
-
-			<button onclick="copyToClipboard('#thetailorstwist')">The Tailor's Twist</button>
-			<ul id="thetailorstwist">
-				<li>The Tailor's Twist</li>
-				<li>http://michaeleskin.com/transcriptions/tailors_twist_bc.pdf</li>
-			</ul>
-
+			<p>Individual Tunes with Bass/Chord Annotation</p>
+			<button onclick="copyToClipboard('#alexander_bc')">Alexander's (hornpipe)</button>
+			<button onclick="copyToClipboard('#banshee_bc')">The Banshee (reel)</button>
+			<button onclick="copyToClipboard('#boys_of_bluehill_bc')">The Boys of Bluehill (hornpipe)</button>
+			<button onclick="copyToClipboard('#cameronian_bc')">The Cameronian (reel)</button>
+			<button onclick="copyToClipboard('#cat_rambles_bc')">The Cat Rambles to the Child's Saucepan (slide)</button>
+			<button onclick="copyToClipboard('#chaffpool_post_bc')">The Chaffpool Post (barndance)</button>
+			<button onclick="copyToClipboard('#cock_o_the_north_bc')">Cock 'O The North (slide)</button>
+			<button onclick="copyToClipboard('#cooleys_bc')">Cooley's (reel)</button>
+			<button onclick="copyToClipboard('#cronins_reel_bc')">Cronin's (reel)</button>
+			<button onclick="copyToClipboard('#donnybrook_fair_bc')">Donnybrook Fair (jig)</button>
+			<button onclick="copyToClipboard('#dunphys_bc')">Dunphy's (hornpipe)</button>
+			<button onclick="copyToClipboard('#factory_smoke_bc')">The Factory Smoke (hornpipe)</button>
+			<button onclick="copyToClipboard('#fanny_power_bc')">Fanny Power (waltz)</button>
+			<button onclick="copyToClipboard('#flowers_of_spring_bc')">The Flowers of Spring (jig)</button>
+			<button onclick="copyToClipboard('#fordes_bc')">Forde's (polka)</button>
+			<button onclick="copyToClipboard('#going_to_the_well_for_water_bc')">Going to the Well for Water (slide)</button>
+			<button onclick="copyToClipboard('#green_fields_of_rossbeigh_bc')">The Green Fields of Rossbeigh (reel)</button>
+			
+			<button onclick="copyToClipboard('#horse_keanes_bc')">Horse Keane's (hornpipe)</button>
+			<button onclick="copyToClipboard('#humours_of_castlecomer_bc')">The Humours of Castlecomer (jig)</button>
+			<button onclick="copyToClipboard('#if_i_had_a_wife_bc')">If I Had a Wife (slide)</button>
+			<button onclick="copyToClipboard('#jerrys_beaver_hat_bc')">Jerry's Beaver Hat (jig)</button>
+			<button onclick="copyToClipboard('#john_kellys_concertina_bc')">John Kelly's Concertina (reel)</button>
+			<button onclick="copyToClipboard('#john_ryans_bc')">John Ryan's (polka)</button>
+			<button onclick="copyToClipboard('#kesh_bc')">The Kesh (jig)</button>
+			<button onclick="copyToClipboard('#lark_in_the_morning_bc')">The Lark in the Morning (jig)</button>
+			<button onclick="copyToClipboard('#lucy_farrs_bc')">Lucy Farr's (barndance)</button>
+			<button onclick="copyToClipboard('#maid_behind_the_bar_bc')">The Maid Behind the Bar (reel)</button>
+			<button onclick="copyToClipboard('#maid_of_mt_kisco_bc')">The Maid of Mt. Kisco (reel)</button>
+			<button onclick="copyToClipboard('#masons_apron_bc')">The Mason's Apron (reel)</button>
+			<button onclick="copyToClipboard('#mayor_harrisons_fedora_bc')">Mayor Harrison's Fedora (reel)</button>
+			<button onclick="copyToClipboard('#memories_of_ballymote_bc')">Memories of Ballymote (polka)</button>
+			<button onclick="copyToClipboard('#merrily_kissed_the_quakers_wife_bc')">Merrily Kissed the Quaker's Wife (slide)</button>
+			<button onclick="copyToClipboard('#merry_blacksmith_bc')">The Merry Blacksmith (reel)</button>
+			<button onclick="copyToClipboard('#music_in_the_glen_bc')">Music in the Glen (reel)</button>
+			<button onclick="copyToClipboard('#one_seventy_four_bc')">One Seventy Four (O'Carolan) (jig)</button>
+			<button onclick="copyToClipboard('#out_on_the_ocean_bc')">Out on the Ocean (jig)</button>
+			<button onclick="copyToClipboard('#paddy_cronins_slide_bc')">Paddy Cronin's (slide)</button>
+			<button onclick="copyToClipboard('#pleasures_of_hope_bc')">The Pleasures of Hope (hornpipe)</button>
+			<button onclick="copyToClipboard('#rakish_paddy_bc')">Rakish Paddy (reel)</button>
+			<button onclick="copyToClipboard('#rambling_pitchfork_bc')">The Rambling Pitchfork (jig)</button>
+			<button onclick="copyToClipboard('#scholar_bc')">The Scholar (reel)</button>
+			<button onclick="copyToClipboard('#sherlocks_bc')">Sherlock's (hornpipe)</button>
+			<button onclick="copyToClipboard('#si_beag_si_mor_bc')">Sí Beag Sí Mór (waltz)</button>
+			<button onclick="copyToClipboard('#silver_spear_bc')">The Silver Spear (reel)</button>
+			<button onclick="copyToClipboard('#smell_of_the_bog_bc')">The Smell of the Bog (hornpipe)</button>
+			<button onclick="copyToClipboard('#sonny_brogans_bc')">Sonny Brogan's (mazurka)</button>
+			<button onclick="copyToClipboard('#speed_the_plough_bc')">Speed the Plough (reel)</button>
+			<button onclick="copyToClipboard('#tailors_twist_bc')">The Tailors Twist (hornpipe)</button>
+			<button onclick="copyToClipboard('#thames_bc')">The Thames (hornpipe)</button>
+			<button onclick="copyToClipboard('#wicklow_bc')">The Wicklow (hornpipe)</button>
+			<ul id="alexanders_bc"><li>Alexander's (hornpipe)</li><li>http://michaeleskin.com/transcriptions/alexanders_bc.pdf</li></ul>
+			<ul id="banshee_bc"><li>The Banshee (reel)</li><li>http://michaeleskin.com/transcriptions/banshee_bc.pdf</li></ul>
+			<ul id="boys_of_bluehill_bc"><li>The Boys of Bluehill (hornpipe)</li><li>http://michaeleskin.com/transcriptions/boys_of_bluehill_bc.pdf</li></ul>
+			<ul id="cameronian_bc"><li>The Cameronian (reel)</li><li>http://michaeleskin.com/transcriptions/cameronian_bc.pdf</li></ul>
+			<ul id="cat_rambles_bc"><li>The Cat Rambles to the Child's Saucepan (slide)</li><li>http://michaeleskin.com/transcriptions/cat_rambles_bc.pdf</li></ul>
+			<ul id="chaffpool_post_bc"><li>The Chaffpool Post (barndance)</li><li>http://michaeleskin.com/transcriptions/chaffpool_post_bc.pdf</li></ul>
+			<ul id="cock_o_the_north_bc"><li>Cock 'O The North (slide)</li><li>http://michaeleskin.com/transcriptions/cock_o_the_north_bc.pdf</li></ul>
+			<ul id="cooleys_bc"><li>Cooley's (reel)</li><li>http://michaeleskin.com/transcriptions/cooleys_bc.pdf</li></ul>
+			<ul id="cronins_reel_bc"><li>Cronin's (reel)</li><li>http://michaeleskin.com/transcriptions/cronins_reel_bc.pdf</li></ul>
+			<ul id="donnybrook_fair_bc"><li>Donnybrook Fair (jig)</li><li>http://michaeleskin.com/transcriptions/donnybrook_fair_bc</li></ul>
+			<ul id="dunphys_bc"><li>Dunphy's (hornpipe)</li><li>http://michaeleskin.com/transcriptions/dunphys_bc.pdf</li></ul>
+			<ul id="factory_smoke_bc"><li>The Factory Smoke (hornpipe)</li><li>http://michaeleskin.com/transcriptions/factory_smoke_bc.pdf</li></ul>
+			<ul id="fanny_power_bc"><li>Fanny Power (waltz)</li><li>http://michaeleskin.com/transcriptions/fanny_power_bc.pdf</li></ul>
+			<ul id="flowers_of_spring_bc"><li>The Flowers of Spring (jig)</li><li>http://michaeleskin.com/transcriptions/flowers_of_spring_bc.pdf</li></ul>
+			<ul id="fordes_bc"><li>Forde's (polka)</li><li>http://michaeleskin.com/transcriptions/fordes_bc.pdf</li></ul>
+			<ul id="going_to_the_well_for_water_bc"><li>Going to the Well for Water (slide)</li><li>http://michaeleskin.com/transcriptions/going_to_the_well_for_water_bc.pdf</li></ul>
+			<ul id="green_fields_of_rossbeigh_bc"><li>The Green Fields of Rossbeigh (reel)</li><li>http://michaeleskin.com/transcriptions/green_fields_of_rossbeigh_bc.pdf</li></ul>
+			<ul id="horse_keanes_bc"><li>Horse Keane's (hornpipe)</li><li>http://michaeleskin.com/transcriptions/horse_keanes_bc.pdf</li></ul>
+			<ul id="humours_of_castlecomer_bc"><li>The Humours of Castlecomer (jig)</li><li>http://michaeleskin.com/transcriptions/humours_of_castlecomer_bc.pdf</li></ul>
+			<ul id="if_i_had_a_wife_bc"><li>If I Had a Wife (slide)</li><li>http://michaeleskin.com/transcriptions/if_i_had_a_wife_bc.pdf</li></ul>
+			<ul id="jerrys_beaver_hat_bc"><li>Jerry's Beaver Hat (jig)</li><li>http://michaeleskin.com/transcriptions/jerrys_beaver_hat_bc.pdf</li></ul>
+			<ul id="john_kellys_concertina_bc"><li>John Kelly's Concertina (reel)</li><li>http://michaeleskin.com/transcriptions/john_kellys_concertina_bc.pdf</li></ul>
+			<ul id="john_ryans_bc"><li>John Ryan's (polka)</li><li>http://michaeleskin.com/transcriptions/john_ryans_bc.pdf</li></ul>
+			<ul id="kesh_bc"><li>The Kesh (jig)</li><li>http://michaeleskin.com/transcriptions/kesh_bc.pdf</li></ul>
+			<ul id="lark_in_the_morning_bc"><li>The Lark in the Morning (jig)</li><li>http://michaeleskin.com/transcriptions/lark_in_the_morning_bc.pdf</li></ul>
+			<ul id="lucy_farrs_bc"><li>Lucy Farr's (barndance)</li><li>http://michaeleskin.com/transcriptions/lucy_farrs_bc.pdf</li></ul>
+			<ul id="maid_behind_the_bar_bc"><li>The Maid Behind the Bar (reel)</li><li>http://michaeleskin.com/transcriptions/maid_behind_the_bar_bc.pdf</li></ul>
+			<ul id="maid_of_mt_kisco_bc"><li>The Maid of Mt. Kisco (reel)</li><li>http://michaeleskin.com/transcriptions/maid_of_mt_kisco_bc.pdf</li></ul>
+			<ul id="masons_apron_bc"><li>The Mason's Apron (reel)</li><li>http://michaeleskin.com/transcriptions/masons_apron_bc.pdf</li></ul>
+			<ul id="mayor_harrisons_fedora_bc"><li>Mayor Harrison's Fedora (reel)</li><li>http://michaeleskin.com/transcriptions/mayor_harrisons_fedora_bc.pdf</li></ul>
+			<ul id="memories_of_ballymote_bc"><li>Memories of Ballymote (polka)</li><li>http://michaeleskin.com/transcriptions/memories_of_ballymote_bc.pdf</li></ul>
+			<ul id="merrily_kissed_the_quakers_wife_bc"><li>Merrily Kissed the Quaker's Wife (slide)</li><li>http://michaeleskin.com/transcriptions/merrily_kissed_the_quakers_wife_bc.pdf</li></ul>
+			<ul id="merry_blacksmith_bc"><li>The Merry Blacksmith (reel)</li><li>http://michaeleskin.com/transcriptions/merry_blacksmith_bc.pdf</li></ul>
+			<ul id="music_in_the_glen_bc"><li>Music in the Glen (reel)</li><li>http://michaeleskin.com/transcriptions/music_in_the_glen_bc.pdf</li></ul>
+			<ul id="one_seventy_four_bc"><li>One Seventy Four (O'Carolan) (jig)</li><li>http://michaeleskin.com/transcriptions/one_seventy_four_bc.pdf</li></ul>
+			<ul id="out_on_the_ocean_bc"><li>Out on the Ocean (jig)</li><li>http://michaeleskin.com/transcriptions/out_on_the_ocean_bc.pdf</li></ul>
+			<ul id="paddy_cronins_slide_bc"><li>Paddy Cronin's (slide)</li><li>http://michaeleskin.com/transcriptions/paddy_cronins_slide_bc.pdf</li></ul>
+			<ul id="pleasures_of_hope_bc"><li>The Pleasures of Hope (hornpipe)</li><li>http://michaeleskin.com/transcriptions/pleasures_of_hope_bc.pdf</li></ul>
+			<ul id="rakish_paddy_bc"><li>Rakish Paddy (reel)</li><li>http://michaeleskin.com/transcriptions/rakish_paddy_bc.pdf</li></ul>
+			<ul id="rambling_pitchfork_bc"><li>The Rambling Pitchfork (jig)</li><li>http://michaeleskin.com/transcriptions/rambling_pitchfork_bc.pdf</li></ul>
+			<ul id="scholar_bc"><li>The Scholar (reel)</li><li>http://michaeleskin.com/transcriptions/scholar_bc.pdf</li></ul>
+			<ul id="sherlocks_bc"><li>Sherlock's (hornpipe)</li><li>http://michaeleskin.com/transcriptions/sherlocks_bc.pdf</li></ul>
+			<ul id="si_beag_si_mor_bc"><li>Sí Beag Sí Mór (waltz)</li><li>http://michaeleskin.com/transcriptions/si_beag_si_mor_bc.pdf</li></ul>
+			<ul id="silver_spear_bc"><li>The Silver Spear (reel)</li><li>http://michaeleskin.com/transcriptions/silver_spear_bc.pdf</li></ul>
+			<ul id="smell_of_the_bog_bc"><li>The Smell of the Bog (hornpipe)</li><li>http://michaeleskin.com/transcriptions/smell_of_the_bog_bc.pdf</li></ul>
+			<ul id="sonny_brogans_bc"><li>Sonny Brogan's (mazurka)</li><li>http://michaeleskin.com/transcriptions/sonny_brogans_bc.pdf</li></ul>
+			<ul id="speed_the_plough_bc"><li>Speed the Plough (reel)</li><li>http://michaeleskin.com/transcriptions/speed_the_plough_bc.pdf</li></ul>
+			<ul id="tailors_twist_bc"><li>The Tailors Twist (hornpipe)</li><li>http://michaeleskin.com/transcriptions/tailors_twist_bc.pdf</li></ul>
+			<ul id="thames_bc"><li>The Thames (hornpipe)</li><li>http://michaeleskin.com/transcriptions/thames_bc.pdf</li></ul>
+			<ul id="wicklow_bc"><li>The Wicklow (hornpipe)</li><li>http://michaeleskin.com/transcriptions/wicklow_bc.pdf</li></ul>
 		</div>
 	</body>
 	<script>
 	function copyToClipboard(element) {
 		var thelist = $(element).html();
 		thelist = thelist.replace(/\s+<li>/g, '');
-				thelist = thelist.replace(/<\/?li>/g, '\r');
-				thelist = thelist.replace(/\t/g, '');
-				$('.auto').val(thelist);
-				var $temp = $("<textarea>");
-				$("body").append($temp);
-				$temp.val(thelist).select();
-				document.execCommand('copy');
-				$temp.remove();
-			}
-			;
+						thelist = thelist.replace(/<\/?li>/g, '\r');
+						thelist = thelist.replace(/\t/g, '');
+						$('.auto').val(thelist);
+						var $temp = $("<textarea>");
+						$("body").append($temp);
+						$temp.val(thelist).select();
+						document.execCommand('copy');
+						$temp.remove();
+					}
+					;
 		</script>
 	</html>
