@@ -85,6 +85,12 @@
 				<li>Venmo: @MichaelEskin</li>
 				<li>Zelle: 6193681854</li>
 			</ul>
+			<button onclick="copyToClipboard('#zoomsettings')">Zoom Settings</button>
+			<ul id="zoomsettings">
+				<li>Zoom audio settings for sessions (desktop versions):</li>
+				<li></li>
+				<li>http://michaeleskin.com/img/zoom_audio_setup_20feb2021.jpg</li>
+			</ul>
 			<p></p>
 			<button onclick="copyToClipboard('#covidbracelets')">COVID-19 Bracelets</button>
 			<ul id="covidbracelets">
@@ -98,7 +104,7 @@
 				<li></li>
 				<li>https://www.amazon.com/dp/B08HN7XHM4/ref=nav_timeline_asin?_encoding=UTF8&psc=1</li>
 			</ul>
-			<button onclick="copyToClipboard('#zoomhardware')">Zoom Audio Setup</button>
+			<button onclick="copyToClipboard('#zoomhardware')">Audio Processor</button>
 			<ul id="zoomhardware">
 				<li>My iPad-based Zoom audio processor and system configuration:</li>
 				<li></li>
@@ -157,7 +163,12 @@
 				<li></li>
 				<li>http://michaeleskin.com/handouts/ship_in_the_clouds_dawn_chorus_set.pdf</li>
 				<li></li>
-				<li>From the group "Ship in the Clouds":</li>
+				<li>From the Boston group "Ship in the Clouds":</li>
+				<li></li>
+				<li>Anna Colliton: Bodhrán</li>
+				<li>Laura Feddersen: Fiddle</li>
+				<li>Nathan Gourley: Guitar</li>
+				<li>Natasha Sheehy: Button Accordion</li>
 				<li></li>
 				<li>https://shipintheclouds.bandcamp.com/track/the-dawn-chorus-the-one-that-was-lost-the-castlebar-races</li>
 			</ul>
@@ -166,6 +177,22 @@
 				<li>Freddy Kimmel's (hornpipe)</li>
 				<li></li>
 				<li>http://michaeleskin.com/transcriptions/freddy_kimmels.pdf</li>
+			</ul>
+			<button onclick="copyToClipboard('#gretasfavourite')">Greta's Favourite (reel)+</button>
+			<ul id="gretasfavourite">
+				<li>Greta's Favourite (Richard Dwyer) (reel)</li>
+				<li></li>
+				<li>Tune transcription:</li>
+				<li></li>
+				<li>http://michaeleskin.com/transcriptions/gretas_favourite.pdf</li>
+				<li></li>
+				<li>Backing track (Rock-and-Roll style):</li>
+				<li></li>
+				<li>http://michaeleskin.com/recordings/backing_tracks/gretas_favourite_backup.mp3</li>
+				<li></li>
+				<li>Video:</li>
+				<li></li>
+				<li>https://vimeo.com/545579164</li>
 			</ul>
 			<p></p>
 			<p>Tin Whistle Class</p>
@@ -227,6 +254,12 @@
 				<li>The Fermoy Lasses (reel)</li>
 				<li></li>
 				<li>http://michaeleskin.com/handouts/fermoy_lasses.pdf</li>
+			</ul>
+			<button onclick="copyToClipboard('#sibeagwhistle')">Sí Beag Sí Mór (waltz)</button>
+			<ul id="sibeagwhistle">
+				<li>Sí Beag Sí Mór (waltz)</li>
+				<li></li>
+				<li>http://michaeleskin.com/handouts/si_beag_si_mor.pdf</li>
 			</ul>
 			<p></p>
 			<button onclick="copyToClipboard('#wards')">Jimmy Ward's (jig)</button>
@@ -320,8 +353,9 @@
 				<li></li>
 				<li>Next event:</li>
 				<li></li>
-				<li>Whelan Master Session 24: Martin Hayes</li>
-				<li>Saturday, May 1, 2pm Pacific/5pm Eastern/10pm Ireland/England</li>
+				<li>Whelan Master Session 25: Laurence Nugent</li>
+				<li></li>
+				<li>Saturday, May 8, 2pm Pacific/5pm Eastern/10pm Ireland/England</li>
 			</ul>
 			<p></p>
 			<button onclick="copyToClipboard('#swannanoa')">Swannanoa</button>
@@ -340,6 +374,16 @@
 				<li></li>
 				<li>https://oflahertyretreat.org/</li>
 			</ul>
+			<button onclick="copyToClipboard('#wildatlantic')">Wild Atlantic Tour 2022</button>
+			<ul id="wildatlantic">
+				<li>Wild Atlantic Music Tour with John Whelan, March 26 - April 2, 2022</li>
+				<li></li>
+				<li>https://wildatlanticmusictours.com</li>
+				<li></li>
+				<li>Itinerary:</li>
+				<li></li>
+				<li>https://wildatlanticmusictours.com/wp-content/uploads/2021/01/John-Whelan-March-2022-Tour.pdf</li>
+			</ul>
 			<p>John Whelan Tunes</p>
 			<button onclick="copyToClipboard('#todaystune')">Today's Tune</button>
 			<ul id="todaystune">
@@ -352,6 +396,12 @@
 				<li></li>
 			</ul>
 			<p></p>
+			<button onclick="copyToClipboard('#irishwasherwoman')">The Irish Washerwoman (reel)</button>
+			<ul id="irishwasherwoman">
+				<li>The Irish Washerwoman (reel)</li>
+				<li></li>
+				<li>http://michaeleskin.com/handouts/the_irish_washerwoman_reel.pdf</li>
+			</ul>
 			<button onclick="copyToClipboard('#abbeyleix')">The Abbeyleix (reel)</button>
 			<ul id="abbeyleix">
 				<li>The Abbeyleix (reel)</li>
@@ -703,14 +753,14 @@
 		function copyToClipboard(element) {
 			var thelist = $(element).html();
 			thelist = thelist.replace(/\s+<li>/g, '');
-			thelist = thelist.replace(/<\/?li>/g, '\r');
-			thelist = thelist.replace(/\t/g, '');
-			$('.auto').val(thelist);
-			var $temp = $("<textarea>");
-			$("body").append($temp);
-			$temp.val(thelist).select();
-			document.execCommand('copy');
-			$temp.remove();
-		};
+				thelist = thelist.replace(/<\/?li>/g, '\r');
+				thelist = thelist.replace(/\t/g, '');
+				$('.auto').val(thelist);
+				var $temp = $("<textarea>");
+				$("body").append($temp);
+				$temp.val(thelist).select();
+				document.execCommand('copy');
+				$temp.remove();
+			};
 	</script>
-	</html>
+</html>
