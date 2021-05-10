@@ -59,10 +59,15 @@
 			ul,li {
 				display:none;
 			}
+
 		</style>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	</head>
 	<body>
+		<div id="status-banner" style="display:none;position:fixed;bottom:0;left:0;height:58px;width:100%;background-color: yellow">
+			<p style="text-align: center">Copied!</p>
+		</div>
+
 		<div style="text-align: center;margin-bottom: 100px">
 			<p></p>
 			<p>The Ould Sod Virtual Session</p>
@@ -761,6 +766,17 @@
 				$temp.val(thelist).select();
 				document.execCommand('copy');
 				$temp.remove();
+
+				// Show the banner
+				$("#status-banner").show();
+
+				// Hide the banner
+				window.setTimeout(function(){
+					$("#status-banner").fadeOut();
+					},
+					1000
+				);
+				
 			};
 	</script>
 </html>
