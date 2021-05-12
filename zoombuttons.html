@@ -64,7 +64,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	</head>
 	<body>
-		<div id="status-banner" style="display:none;position:fixed;bottom:0;left:0;height:58px;width:100%;background-color: yellow">
+		<div id="status-banner" style="display:block;position:fixed;bottom:0;left:0;height:58px;width:100%;background-color: yellow">
 			<p style="text-align: center">Copied!</p>
 		</div>
 
@@ -141,7 +141,7 @@
 				<li></li>
 				<li>http://michaeleskin.com/handouts/incipits.pdf</li>
 			</ul>
-			<button onclick="copyToClipboard('#boxtranscriptions')">B/C Box</button>
+			<button onclick="copyToClipboard('#boxtranscriptions')">B/C Box Book</button>
 			<ul id="boxtranscriptions">
 				<li>B/C Accordion Bass/Chord Transcriptions:</li>
 				<li></li>
@@ -193,11 +193,11 @@
 				<li></li>
 				<li>Backing track (Rock-and-Roll style):</li>
 				<li></li>
-				<li>http://michaeleskin.com/recordings/backing_tracks/gretas_favourite_backup.mp3</li>
+				<li>http://michaeleskin.com/recordings/backing_tracks/gretas_favourite_backup_rock.mp3</li>
 				<li></li>
-				<li>Video:</li>
+				<li>Backing track (Rock-and-Roll style):</li>
 				<li></li>
-				<li>https://vimeo.com/545579164</li>
+				<li>http://michaeleskin.com/recordings/backing_tracks/gretas_favourite_backup_reggae.mp3</li>
 			</ul>
 			<p></p>
 			<p>Tin Whistle Class</p>
@@ -774,7 +774,7 @@
 				window.setTimeout(function(){
 					$("#status-banner").fadeOut();
 					},
-					1000
+					500
 				);
 				
 			};
