@@ -31,6 +31,8 @@ Each button has an inline onclick handler that calls a function called "copyToCl
     
 copyToClipboard() reads the contents of the ul with the absolute ID passed in, formats the text with each li element turned into a line of text, creates a temporary text area, pastes the text into the text area, copies it to the system clipboard, then destroys the text area.
 
+At startup, all tunes in the tunes div are sorted by the button text.
+
 At that point, the text can be pasted into Zoom or any other program.
 
 You should not have to modify the copyToClipboard() function, only the buttons and ul lists to create your own buttons. 
