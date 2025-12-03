@@ -13,6 +13,8 @@ To help automate this process, I've built a little web-based tool that you are w
 
 It's essentially a button board that copies text onto the clipboard, which you can then paste into the Zoom chat.
 
+Any tunes added to the #tunes div will automatically be alphabetized and will include alphabetic headers for each letter.
+
 Other than including jQuery, the utility is completely self-contained.
 
 # Installing
@@ -36,3 +38,4 @@ At startup, all tunes in the tunes div are sorted by the button text.
 At that point, the text can be pasted into Zoom or any other program.
 
 You should not have to modify the copyToClipboard() function, only the buttons and ul lists to create your own buttons. 
+
