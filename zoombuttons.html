@@ -23,39 +23,65 @@
 		<title>Zoom Buttons</title>
 		<style>
 			body {
-				background-color: lightblue;
-				color: #3a3a3a;
+			    background-color: lightblue;
+			    color: #3a3a3a;
 			}
+
 			button, html input[type="button"], input[type="reset"], input[type="submit"], .button, .button:visited {
-				background-color: #666666;
-				color: #FFFFFF;
+			    background-color: #666666;
+			    color: #FFFFFF;
 			}
-			button:hover, html input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .button:hover, button:focus, html input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, .button:focus, button:active, html input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active, .button:active {
-				background-color: #900000;
-				color: #FFFFFF;
+
+			button:hover, html input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .button:hover,
+			button:focus, html input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, .button:focus,
+			button:active, html input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active, .button:active {
+			    background-color: #900000;
+			    color: #FFFFFF;
 			}
+
 			body, button, input, select, textarea {
-				font-family: "Raleway", sans-serif;
-				font-weight: 500;
-				text-transform: none;
-				font-size: 20px;
+			    font-family: "Raleway", sans-serif;
+			    font-weight: 500;
+			    text-transform: none;
+			    font-size: 20px;
 			}
+
 			p {
-				color: #000000;
-				font-size: 20px;
+			    color: #000000;
+			    font-size: 20px;
 			}
+
 			button {
-				height: 50px;
-				width: auto;
-				border-radius: 8px;
-				padding: 10px;
-				margin:5px;
-				margin-bottom:10px;
-				white-space: normal;
-				cursor: pointer;
+			    height: 50px;
+			    width: auto;
+			    border-radius: 8px;
+			    padding: 10px;
+			    margin: 5px;
+			    margin-bottom: 10px;
+			    white-space: normal;
+			    cursor: pointer;
 			}
-			ul,li {
-				display:none;
+
+			ul, li {
+			    display: none;
+			}
+
+			/* Thin section dividers */
+			.tune-letter-section-0,
+			.tune-letter-section-1 {
+			    background: transparent;
+			    padding: 8px 0;
+			    border-top: 1px solid #e2e2e2;  /* subtle divider */
+			}
+
+			/* Letter headers with matching divider line */
+			#tunes .tune-letter-header {
+			    font-weight: bold;
+			    font-size: 20px;
+			    margin-top: -8px;
+			    margin-bottom: 8px;
+			    padding: 4px 8px;
+			    border-bottom: 1px solid #e2e2e2;  /* now matches section divider */
 			}
 		</style>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -87,15 +113,21 @@
 			<ul id="sessioninfo">
 				<li>The Ould Sod Virtual Session on Zoom</li>
 				<li></li>
-				<li>Weekly session Zoom link and other info on optimal Zoom settings at:</li>
+				<li>Schedule, Zoom meeting link and other info on optimal Zoom settings at:</li>
 				<li></li>
 				<li>https://michaeleskin.com/session</li>
 			</ul>
 			<button onclick="copyToClipboard('#zoompromo')">Zoom Session Promo</button>
 			<ul id="zoompromo">
-				<li>The Ould Sod Virtual Session on Zoom, PLACEHOLDER, Thursday, PLACEHOLDER, starting at 6:00 PM Pacific time!</li>
+				<li>The Ould Sod Virtual Session on Zoom</li>
+				<li></li>				
+				<li>First Thursday of each month:</li>
+				<li>6:00 PM - 8:00 PM Pacific Time (9:00 PM - 11:00 PM Eastern Time)</li>
 				<li></li>
-				<li>“The Ould Sod” is the San Diego neighborhood pub where I’ve been co-hosting a traditional Irish session every Tuesday night for over 20 years.</li>
+				<li>Third Thursday of each month:</li>
+				<li>12:00 PM - 2:00 PM Pacific time (3:00 PM - 5:00 PM Eastern Time)</li>
+				<li></li>
+				<li>“The Ould Sod” is the San Diego neighborhood pub where I’ve been co-hosting a traditional Irish session every Tuesday night for over 25 years.</li>
 				<li></li>
 				<li>Here’s how it works:</li>
 				<li></li>
@@ -274,6 +306,13 @@
 				<li></li>
 				<li>https://michaeleskin.com/handouts/incipits.pdf</li>
 			</ul>
+			<button onclick="copyToClipboard('#ocarolan_website')">O'Carolan Website</button>
+			<ul id="ocarolan_website">
+				<li>ABC Transcription Tools generated website with over 200 O'Carolan tunes.</li>
+				<li>Tunes play with a harp sound.</li>
+				<li></li>
+				<li>https://michaeleskin.com/ocarolan.html</li>
+			</ul>
 			<button onclick="copyToClipboard('#tunelearning')">Learning Tunes by Ear</button>
 			<ul id="tunelearning">
 				<li>Learning tunes by ear using Transcribe:</li>
@@ -336,6 +375,12 @@
 				<li>Mandolin, GDAD Bouzouki, Guitar, DADGAD Guitar, Tin Whistle (D)</li>
 				<li></li>
 				<li>https://michaeleskin.com/tunebooks.html</li>
+			</ul>
+			<button onclick="copyToClipboard('#cobblestone')">Cobblestone Tunebook</button>
+			<ul id="cobblestone">
+				<li>Download the original "Cobblestone Tunebook":</li>
+				<li></li>
+				<li>https://michaeleskin.com/transcriptions/cobblestone_tunebook_24sep2024.pdf</li>
 			</ul>
 			<p></p>
 			<button onclick="copyToClipboard('#zoombuttons')">Zoom Buttons on GitHub</button>
@@ -464,6 +509,32 @@
 					<li>Nathan Gourley and Laura Feddersen - "Brightly or Darkly"</li>
 					<li></li>
 					<li>https://nathanandlaura.bandcamp.com/track/i-ne-er-shall-wean-her-hardiman-s-fancy</li>
+				</ul>
+				<button onclick="copyToClipboard('#quinns')">Quinn's / The Graf Spey (reels)</button>
+				<ul id="quinns">
+					<li>Quinn's / The Graf Spey (reels)</li>
+					<li></li>
+					<li>https://michaeleskin.com/handouts/Quinns_Graf_Spey.pdf</li>
+					<li></li>
+					<li>Nathan Gourley and Laura Feddersen - "Life is All Checkered"</li>
+					<li></li>
+					<li>https://www.youtube.com/watch?v=Fw2RJ5JA5JA</li>
+				</ul>
+				<button onclick="copyToClipboard('#blockers')">The Blockers (reel)</button>
+				<ul id="blockers">
+					<li>The Blockers (reel)</li>
+					<li></li>
+					<li>https://michaeleskin.com/handouts/The_Blockers_Dmix_26apr2025.pdf</li>
+					<li></li>
+					<li>This version from Michael Gallagher</li>
+					<li></li>
+					<li>https://www.youtube.com/watch?v=f29jj_lAkFY</li>
+					<li></li>
+					<li>https://michaeleskin.com/handouts/The_Blockers_Gmix_26apr2025.pdf</li>
+					<li></li>
+					<li>From Nathan Gourley and Laura Feddersen - "Life is All Checkered"</li>
+					<li></li>
+					<li>https://www.youtube.com/watch?v=GFfxDme6vSU</li>
 				</ul>
 				<button onclick="copyToClipboard('#grainnes')">Grainne's</button>
 				<ul id="grainnes">
@@ -1188,12 +1259,6 @@
 					<li></li>
 					<li>https://michaeleskin.com/transcriptions/maid_behind_the_bar_bc.pdf</li>
 				</ul>
-				<button onclick="copyToClipboard('#maid_of_mt_kisco_bc')">The Maid of Mt. Kisco (reel)</button>
-				<ul id="maid_of_mt_kisco_bc">
-					<li>The Maid of Mt. Kisco (reel)</li>
-					<li></li>
-					<li>https://michaeleskin.com/transcriptions/maid_of_mt_kisco_bc.pdf</li>
-				</ul>
 				<button onclick="copyToClipboard('#masons_apron_bc')">The Mason's Apron (reel)</button>
 				<ul id="masons_apron_bc">
 					<li>The Mason's Apron (reel)</li>
@@ -1368,12 +1433,6 @@
 					<li></li>
 					<li>https://michaeleskin.com/handouts/the_marino.pdf</li>
 				</ul>
-				<button onclick="copyToClipboard('#sport_bc')">Spórt (jig)</button>
-				<ul id="sport_bc">
-					<li>Spórt (jig)</li>
-					<li></li>
-					<li>https://michaeleskin.com/handouts/sport_bc.pdf</li>
-				</ul>
 				<button onclick="copyToClipboard('#peacocks_feathers_bc')">The Peacock's Feathers (hornpipe)</button>
 				<ul id="peacocks_feathers_bc">
 					<li>The Peacock's Feathers (hornpipe)</li>
@@ -1436,6 +1495,84 @@
 					<li></li>
 					<li>https://michaeleskin.com/handouts/sporting_dwyers_totm_april_2022.pdf</li>
 				</ul>
+				<button onclick="copyToClipboard('#stephens')">Stephen's (waltz)</button>
+				<ul id="stephens">
+					<li>Stephen's (waltz)</li>
+					<li></li>
+					<li>https://michaeleskin.com/handouts/stephens.pdf</li>
+				</ul>
+				<button onclick="copyToClipboard('#nias')">Nia's (barndance)</button>
+				<ul id="nias">
+					<li>Nia's (barndance)</li>
+					<li>Composed by Dermot Byrne</li>
+					<li></li>
+					<li>https://michaeleskin.com/handouts/Nias.pdf</li>
+				</ul>
+				<button onclick="copyToClipboard('#pumpherstond')">The Pumpherston (Dm) (hornpipe)</button>
+				<ul id="pumpherstond">
+					<li>The Pumpherston (Dm) (hornpipe)</li>
+					<li></li>
+					<li>https://michaeleskin.com/handouts/The_Pumpherston_Dm.pdf</li>
+				</ul>
+				<button onclick="copyToClipboard('#pumpherstong')">The Pumpherston (Gm) (hornpipe)</button>
+				<ul id="pumpherstong">
+					<li>The Pumpherston (Gm) (hornpipe)</li>
+					<li></li>
+					<li>https://michaeleskin.com/handouts/The_Pumpherston_Gm.pdf</li>
+				</ul>
+				<button onclick="copyToClipboard('#tinythetrooper')">Tiny the Trooper (slip jig)</button>
+				<ul id="tinythetrooper">
+					<li>Tiny the Trooper (slip jig)</li>
+					<li></li>
+					<li>https://michaeleskin.com/transcriptions/Tiny_the_Trooper.pdf</li>
+				</ul>
+				<button onclick="copyToClipboard('#gooseberrybush')">The Gooseberry Bush (reel)</button>
+				<ul id="gooseberrybush">
+					<li>The Gooseberry Bush (reel)</li>
+					<li></li>
+					<li>https://michaeleskin.com/handouts/The_Gooseberry_Bush.pdf</li>
+				</ul>
+				<button onclick="copyToClipboard('#sport_bc')">Spórt - B/C Box Chords (jig)</button>
+				<ul id="sport_bc">
+					<li>Spórt - B/C Box Chords (jig)</li>
+					<li></li>
+					<li>https://michaeleskin.com/handouts/Spórt_BC_Box_19Jan2025.pdf</li>
+				</ul>
+				<button onclick="copyToClipboard('#maids_of_galway')">The Old Maids of Galway Set (reels)</button>
+				<ul id="maids_of_galway">
+					<li>The Old Maids of Galway / Ricky's White Face / Going Home (reels)</li>
+					<li></li>
+					<li>https://michaeleskin.com/transcriptions/The_Old_Maids_of_Galway_Ricky's_White_Face_Going_Home.pdf</li>
+					<li></li>
+					<li>Transcribed from:</li>
+					<li></li>
+					<li>https://www.youtube.com/watch?v=DKrW-kwadsY</li>
+				</ul>
+				<button onclick="copyToClipboard('#last_nights_fun_set')">Last Night's Fun Set (reels)</button>
+				<ul id="last_nights_fun_set">
+					<li>Last Night's Fun / The Chattering Magpie / The Black Haired Lass / The Commodore (reels)</li>
+					<li></li>
+					<li>https://michaeleskin.com/handouts/last_nights_fun_set_6nov2025.pdf</li>
+					<li></li>
+					<li>Transcribed from "Cherish the Ladies":</li>
+					<li></li>					
+					<li>https://www.youtube.com/watch?v=NyTVb48uG9A</li>
+				</ul>
+				<button onclick="copyToClipboard('#the_commodore')">The Commodore (reel)</button>
+				<ul id="the_commodore">
+					<li>The Commodore (Billy McComiskey)</li>
+					<li></li>
+					<li>https://michaeleskin.com/handouts/The_Commodore_Billy_McComiskey_11nov2025.pdf</li>
+				</ul>
+				<button onclick="copyToClipboard('#sourgrass')">Sourgrass and Granite (waltz)</button>
+				<ul id="sourgrass">
+					<li>Sourgrass and Granite (waltz)</li>
+					<li></li>
+					<li>https://michaeleskin.com/handouts/Sourgrass_And_Granite.pdf</li>
+					<li></li>
+					<li>With chords for B/C box:</li>
+					<li>https://michaeleskin.com/handouts/Sourgrass_And_Granite_BC_Box.pdf</li>
+				</ul>
 			</div>
 			<hr>
 			<button onclick="copyToClipboard('#circle_of_modes')">Circle of Modes</button>
@@ -1464,58 +1601,116 @@
 	</body>
 	
 	<script>
-	
-		function copyToClipboard(element) {
-			
-			var thelist = $(element).html();
-			if (!thelist){
-				alert("Problem finding element with ID: "+element);
-				return;
-			}
-			thelist = thelist.replace(/\s+<li>/g, '');
-				thelist = thelist.replace(/<\/?li>/g, '\r');
-				thelist = thelist.replace(/\t/g, '');
-				$('.auto').val(thelist);
-				var $temp = $("<textarea>");
-				$("body").append($temp);
-				$temp.val(thelist).select();
-				document.execCommand('copy');
-				$temp.remove();
-				// Show the banner
-				$("#status-banner").show();
-				// Hide the banner
-				window.setTimeout(function(){
-						$("#status-banner").fadeOut();
-					},250
-				);
-			};
-			
-		document.addEventListener("DOMContentLoaded", function() {
-			
-			const container = document.getElementById('tunes');
-			
-			// Get all buttons and their following ul elements
-			const elements = Array.from(container.querySelectorAll('button')).map(button => {
-				return {
-					button: button,
-					ul: button.nextElementSibling // Assumes the ul immediately follows the button
-				};
-			});
-			
-			// Sort the elements by button text
-			elements.sort((a, b) => a.button.textContent.replace("The ","").localeCompare(b.button.textContent.replace("The ","")));
-			
-			// Clear the container
-			container.innerHTML = '';
-			
-			// Append the sorted buttons and ul pairs back to the container
-			elements.forEach(pair => {
-				container.appendChild(pair.button);
-				container.appendChild(pair.ul);
-			});
-			
-		});
-			
+
+	function copyToClipboard(element) {
+		
+		var thelist = $(element).html();
+		if (!thelist){
+			alert("Problem finding element with ID: "+element);
+			return;
+		}
+		thelist = thelist.replace(/\s+<li>/g, '');
+			thelist = thelist.replace(/<\/?li>/g, '\r');
+			thelist = thelist.replace(/\t/g, '');
+			$('.auto').val(thelist);
+			var $temp = $("<textarea>");
+			$("body").append($temp);
+			$temp.val(thelist).select();
+			document.execCommand('copy');
+			$temp.remove();
+			// Show the banner
+			$("#status-banner").show();
+			// Hide the banner
+			window.setTimeout(function(){
+					$("#status-banner").fadeOut();
+				},250
+			);
+		};
+
+	document.addEventListener("DOMContentLoaded", function () {
+
+	    const container = document.getElementById("tunes");
+	    if (!container) return;
+
+	    // Extract all button + ul pairs in *original order*
+	    const items = [];
+	    const children = Array.from(container.children);
+
+	    for (let i = 0; i < children.length; i++) {
+	        if (children[i].tagName === "BUTTON") {
+	            const button = children[i];
+	            const ul = button.nextElementSibling;
+	            if (ul && ul.tagName === "UL") {
+	                items.push({ button, ul });
+	            }
+	        }
+	    }
+
+	    // Normalize names
+	    function normalizeTitle(text) {
+	        return text.trim().replace(/^the\s+/i, ""); // Ignore initial "The "
+	    }
+
+	    function getLetter(text) {
+	        const clean = normalizeTitle(text);
+	        const m = clean.match(/[A-Za-z]/);
+	        return m ? m[0].toUpperCase() : "#";
+	    }
+
+	    // Add sort key + letter
+	    items.forEach(item => {
+	        const title = item.button.textContent;
+	        item.letter = getLetter(title);
+	        item.sortKey = normalizeTitle(title).toLowerCase();
+	    });
+
+	    // Sort alphabetically ignoring "The "
+	    items.sort((a, b) => a.sortKey.localeCompare(b.sortKey));
+
+	    // --- Build the new structure ---
+	    const newContent = document.createDocumentFragment();
+	    let currentLetter = null;
+	    let colorIndex = 0;
+	    let sectionWrapper = null;
+
+	    items.forEach(item => {
+
+	        // If new letter group
+	        if (item.letter !== currentLetter) {
+	            currentLetter = item.letter;
+
+	            // End previous wrapper
+	            if (sectionWrapper) {
+	                newContent.appendChild(sectionWrapper);
+	            }
+
+	            // Start new wrapper
+	            sectionWrapper = document.createElement("div");
+	            sectionWrapper.className = "tune-letter-section-" + (colorIndex % 2);
+	            colorIndex++;
+
+	            // Add letter header
+	            const header = document.createElement("div");
+	            header.className = "tune-letter-header";
+	            header.textContent = currentLetter;
+	            sectionWrapper.appendChild(header);
+	        }
+
+	        // Insert the actual tune elements
+	        sectionWrapper.appendChild(item.button);
+	        sectionWrapper.appendChild(item.ul);
+	    });
+
+	    // Append last wrapper
+	    if (sectionWrapper) newContent.appendChild(sectionWrapper);
+
+	    // Replace the tunes container content
+	    container.innerHTML = "";
+	    container.appendChild(newContent);
+
+	});
+
 	</script>
 
-</html>
+	
+	</html>
