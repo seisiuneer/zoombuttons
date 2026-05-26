@@ -3,11 +3,11 @@
 
 For those of you hosting Zoom sessions, if you are like me, you are often having to copy and paste the same text each week into the chat for tunes or recurring event links.  
 
-I've typically done that by keeping a text document open in another window specific for each event, and then manually selecting, copying the text, clicking back into the Zoom chat, and then pasting the text.  
+I had initially done that by keeping a text document open in another window specific for each event, and then manually selecting, copying the text, clicking back into the Zoom chat, and then pasting the text.
 
 That works OK, but it's very easy to make a mistake during the process.
 
-To help automate this process, I've built a little web-based tool that you are welcome to copy and modify to your own requirements.
+To help automate this process, during the 2020 COVID shutdowns I built a little web-based tool that you are welcome to copy and modify to your own requirements.
 
 It's essentially a button board that copies text onto the clipboard, which you can then paste into the Zoom chat.
 
