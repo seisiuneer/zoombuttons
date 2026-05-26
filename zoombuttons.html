@@ -1,4 +1,79 @@
 <!DOCTYPE html>
+
+<!-- 
+* 
+* zoombuttons.html - All code for my Zoombuttons text button board utility
+* 
+* This tool makes it easy to quickly paste text snippets into Zoom chats
+*
+* Project repo at: https://github.com/seisiuneer/zoombuttons
+* 
+*
+* MIT License
+* 
+* Copyright (c) 2026 Michael Eskin
+* 
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+* 
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Software.
+* 
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*
+* 
+
+HOW TO ADD A NEW ZOOM BUTTON
+
+Each button is made from two matching parts:
+
+1. A <button> that the user sees and clicks.
+2. A hidden <ul> list immediately after the button that contains
+ the text that will be copied to the clipboard.
+
+Example:
+
+<button onclick="copyToClipboard('#mynewitem')">My New Button</button>
+<ul id="mynewitem">
+	<li>This is the first line copied to the clipboard.</li>
+	<li></li>
+	<li>This is a new paragraph after a blank line.</li>
+	<li>https://example.com</li>
+</ul>
+
+Important details:
+
+- The button's copyToClipboard('#mynewitem') value must match
+the <ul id="mynewitem"> value exactly.
+
+- Use a unique ID for each item. Do not reuse an ID that is
+already used elsewhere in the file.
+
+- Put each line of copied text inside its own <li>...</li>.
+
+- Use an empty <li></li> when you want a blank line in the
+copied text.
+
+- Add normal general-purpose buttons in the main button area.
+
+- Add tune buttons inside <div id="tunes">. Tune buttons are
+automatically sorted alphabetically when the page loads.
+
+- The search box searches only the visible button titles, not
+the hidden copied text inside the <ul> lists. 
+
+-->
+
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -20,11 +95,13 @@
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="https://michaeleskin.com/img/zoombuttons/ms-icon-144x144.png">
 		<meta name="theme-color" content="#ffffff">
-		<title>Zoom Buttons</title>
+		<title>Zoom Buttons</title> 
 		<style>
 			body {
 			    background-color: lightblue;
 			    color: #3a3a3a;
+			    margin: 0;
+			    padding: 0 18px 18px 18px;
 			}
 
 			button, html input[type="button"], input[type="reset"], input[type="submit"], .button, .button:visited {
@@ -51,9 +128,29 @@
 			    font-size: 20px;
 			}
 
+			/* Empty paragraphs were previously used as spacers.
+			   Remove their default margins so the sticky search bar does not
+			   create a large gap before the first group of buttons. */
+			p:empty {
+				margin: 0;
+				padding: 0;
+				line-height: 0;
+				height: 0;
+			}
+
+			.section-title {
+				color: #000000;
+				font-size: 20px;
+				font-weight: bold;
+				margin: 14px 0 10px 0;
+			}
+
 			button {
+			    -webkit-appearance: none;
+			    appearance: none;
 			    height: 50px;
 			    width: auto;
+			    border: 1px solid #444444;
 			    border-radius: 8px;
 			    padding: 10px;
 			    margin: 5px;
@@ -64,6 +161,85 @@
 
 			ul, li {
 			    display: none;
+			}
+
+			/* Search/filter controls */
+			#search-bar {
+				position: sticky;
+				top: 0;
+				z-index: 1000;
+				background-color: lightblue;
+				padding: 12px 8px;
+				border-bottom: 1px solid #888;
+			}
+
+			#search-row {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 8px;
+				max-width: 900px;
+				margin: 0 auto;
+			}
+
+			#searchBox {
+				box-sizing: border-box;
+				width: min(640px, 72vw);
+				font-size: 20px;
+				padding: 10px 12px;
+				border: 1px solid #888;
+				border-radius: 8px;
+				background-color: #ffffff;
+				color: #000000;
+			}
+
+			#clearSearchButton {
+				height: 44px;
+				min-width: 88px;
+				margin: 0;
+				padding: 6px 12px;
+			}
+
+			#search-count {
+				display: none;
+				font-size: 16px;
+				color: #000000;
+				margin-top: 4px;
+				min-height: 0;
+			}
+
+			#search-count:not(:empty) {
+				display: block;
+			}
+
+			hr {
+				margin: 0;
+				border: 0;
+				border-top: 1px solid #888;
+			}
+
+			.no-search-results {
+				display: none;
+				font-size: 20px;
+				font-weight: bold;
+				color: #000000;
+				margin: 12px auto;
+			}
+
+			@media (max-width: 640px) {
+				#search-row {
+					gap: 6px;
+				}
+
+				#searchBox {
+					width: calc(100vw - 124px);
+					font-size: 18px;
+				}
+
+				#clearSearchButton {
+					min-width: 78px;
+					font-size: 18px;
+				}
 			}
 
 			/* Thin section dividers */
@@ -90,11 +266,17 @@
 		<div id="status-banner" style="display:none;position:fixed;bottom:0;left:0;height:58px;width:100%;background-color: yellow">
 			<p style="text-align: center">Copied!</p>
 		</div>
+
+		<div id="search-bar">
+			<div id="search-row">
+				<input id="searchBox" type="search" placeholder="Search buttons..." autocomplete="off" autocapitalize="off" spellcheck="false">
+				<button id="clearSearchButton" type="button">Clear</button>
+			</div>
+			<div id="search-count" aria-live="polite"></div>
+		</div>
 		<div style="text-align: center;margin-bottom: 24px">
-			<hr>
-			<p></p>
-			<p>General Purpose Links</p>
-			<p></p>
+			<div id="no-search-results" class="no-search-results">No matching buttons found.</div>
+			<p class="section-title">General Purpose Links</p>
 			<button onclick="copyToClipboard('#zoomlink')">Zoom Meeting URL</button>
 			<ul id="zoomlink">
 				<li>Michael Eskin's Zoom Meeting Link:</li>
@@ -124,10 +306,7 @@
 				<li>First Thursday of each month:</li>
 				<li>6:00 PM - 8:00 PM Pacific Time (9:00 PM - 11:00 PM Eastern Time)</li>
 				<li></li>
-				<li>Third Thursday of each month:</li>
-				<li>12:00 PM - 2:00 PM Pacific time (3:00 PM - 5:00 PM Eastern Time)</li>
-				<li></li>
-				<li>“The Ould Sod” is the San Diego neighborhood pub where I’ve been co-hosting a traditional Irish session every Tuesday night for over 25 years.</li>
+ 				<li>“The Ould Sod” is the San Diego neighborhood pub where I’ve been co-hosting a traditional Irish session every Tuesday night for over 25 years.</li>
 				<li></li>
 				<li>Here’s how it works:</li>
 				<li></li>
@@ -206,7 +385,7 @@
 				<li></li>
 				<li>Play your tunes with over 600 different instrument sounds available.</li>
 				<li></li>
-				<li>Use the "Tune Trainer" to practice tunes or sections of tunes with increasing speed..</li>
+				<li>Use the "Tune Trainer" to practice tunes or sections of tunes with increasing speed.</li>
 				<li></li>
 				<li>Share tune sets via Share URLs or even QR codes you can scan with your phone.</li>
 				<li></li>
@@ -245,6 +424,19 @@
 				<li>Cheers and thanks,</li>
 				<li></li>
 				<li>Michael</li>
+			</ul>
+			<p></p>
+			<button onclick="copyToClipboard('#chromatictuner')">Chromatic Tuner</button>
+			<ul id="chromatictuner">
+				<li>Chromatic Tuner</li>
+				<li></li>
+				<li>https://michaeleskin.com/tuner</li>
+			</ul>
+			<button onclick="copyToClipboard('#rtta')">Real Time Tuning Analysis (RTTA)</button>
+			<ul id="rtta">
+				<li>Real Time Tuning Analysis (RTTA)</li>
+				<li></li>
+				<li>https://michaeleskin.com/rtta</li>
 			</ul>
 			<p></p>
 			<button onclick="copyToClipboard('#myemail')">My Email</button>
@@ -435,10 +627,20 @@
 				<li>On YouTube:</li>
 				<li>https://www.youtube.com/playlist?list=OLAK5uy_l95fM86AHkZ5mA_qZ2O9P2hc_En3Ti5PI</li>
 			</ul>
+			<button onclick="copyToClipboard('#abcstandard')">ABC Standard</button>
+			<ul id="abcstandard">
+				<li>ABC 2.1 Standard</li>
+				<li></li>
+				<li>http://abcnotation.com/wiki/abc:standard:v2.1</li>
+			</ul>
+			<button onclick="copyToClipboard('#abccard')">ABC Quick Reference Card</button>
+			<ul id="abccard">
+				<li>ABC 2.1 Quick Reference Card </li>
+				<li></li>
+				<li>https://michaeleskin.com/documents/ABCquickRefv0_6.pdf</li>
+			</ul>
 			<hr>
-			<p></p>
-			<p>Tunes</p>
-			<p></p>
+			<p class="section-title">Tunes</p>
 			<div id="tunes">
 				<button onclick="copyToClipboard('#dawnchorus')">Dawn Chorus Set (jigs)</button>
 				<ul id="dawnchorus">
@@ -1571,36 +1773,166 @@
 					<li>https://michaeleskin.com/handouts/Sourgrass_And_Granite.pdf</li>
 					<li></li>
 					<li>With chords for B/C box:</li>
+					<li></li>
 					<li>https://michaeleskin.com/handouts/Sourgrass_And_Granite_BC_Box.pdf</li>
 				</ul>
+				<button onclick="copyToClipboard('#caucus')">Caucus Set (reels)</button>
+				<ul id="caucus">
+					<li>The Cornerhouse / Jack Rowe's / The Caucus (reels)</li>
+					<li></li>
+					<li>https://michaeleskin.com/handouts/Cornerhouse_Jack_Rowes_Caucus.pdf</li>
+					<li></li>
+					<li>YouTube video (in Eb):</li>
+					<li></li>
+					<li>https://www.youtube.com/watch?v=KWPcf3cKoS0</li>
+				</ul>
+				<button onclick="copyToClipboard('#keyoftheconvent')">Key of the Convent (jig)</button>
+				<ul id="keyoftheconvent">
+					<li>Key of the Convent (jig)</li>
+					<li></li>
+					<li>https://michaeleskin.com/handouts/Key_of_the_Convent.pdf</li>
+					<li></li>
+					<li>Fergal Scahill version on YouTube:</li>
+					<li></li>
+					<li>https://www.youtube.com/watch?v=gUjBezdctwA</li>
+				</ul>
+				<button onclick="copyToClipboard('#rossriver')">Rossriver Waltz</button>
+				<ul id="rossriver">
+					<li>Rossriver Waltz</li>
+					<li></li>
+					<li>https://michaeleskin.com/handouts/ross_river_waltz.pdf</li>
+					<li></li>
+					<li>Steph Geremia version on YouTube:</li>
+					<li></li>
+					<li>https://www.youtube.com/watch?v=Etr1XbM1G7M</li>
+				</ul>
+				<button onclick="copyToClipboard('#streetplayer_traveler')">The Streetplayer / Traveler (reels)</button>
+				<ul id="streetplayer_traveler">
+					<li>The Streetplayer (Ed Reavey) / Traveler (reels)</li>
+					<li></li>
+					<li>https://michaeleskin.com/transcriptions/Streetplayer-Traveler.pdf</li>
+				</ul>
 			</div>
-			<hr>
-			<button onclick="copyToClipboard('#circle_of_modes')">Circle of Modes</button>
-			<ul id="circle_of_modes">
-				<li>Circle of Modes</li>
-				<li></li>
-				<li>https://michaeleskin.com/handouts/circle_of_modes.pdf</li>
-			</ul>
-			<hr>
-			<p></p>
-			<p>ABC 2.1 References</p>
-			<button onclick="copyToClipboard('#abcstandard')">ABC Standard</button>
-			<ul id="abcstandard">
-				<li>ABC 2.1 Standard</li>
-				<li></li>
-				<li>http://abcnotation.com/wiki/abc:standard:v2.1</li>
-			</ul>
-			<button onclick="copyToClipboard('#abccard')">ABC Quick Reference Card</button>
-			<ul id="abccard">
-				<li>ABC 2.1 Quick Reference Card </li>
-				<li></li>
-				<li>https://michaeleskin.com/documents/ABCquickRefv0_6.pdf</li>
-			</ul>
 			<hr>
 		</div>
 	</body>
 	
 	<script>
+
+	function getCopyButtons() {
+		return Array.from(document.querySelectorAll("button[onclick^=\"copyToClipboard\"]"));
+	}
+
+	function normalizeSearchText(text) {
+		return (text || "")
+			.toLowerCase()
+			.normalize("NFD")
+			.replace(/[\u0300-\u036f]/g, "");
+	}
+
+	function buttonSearchText(button) {
+		return normalizeSearchText(button.textContent);
+	}
+
+	function setElementVisible(el, visible) {
+		if (!el) return;
+		el.style.display = visible ? "" : "none";
+	}
+
+	function isElementShown(el) {
+		return !!el && el.style.display !== "none";
+	}
+
+	function hasVisibleCopyButton(root) {
+		return Array.from(root.querySelectorAll("button[onclick^=\"copyToClipboard\"]"))
+			.some(button => isElementShown(button));
+	}
+
+	function updateSectionVisibility() {
+		document.querySelectorAll(".tune-letter-section-0, .tune-letter-section-1").forEach(section => {
+			setElementVisible(section, hasVisibleCopyButton(section));
+		});
+
+		document.querySelectorAll(".section-title").forEach(title => {
+			let hasVisibleButton = false;
+			let node = title.nextElementSibling;
+
+			while (node && !node.classList.contains("section-title")) {
+				if (node.matches && node.matches("button[onclick^=\"copyToClipboard\"]") && isElementShown(node)) {
+					hasVisibleButton = true;
+					break;
+				}
+
+				if (hasVisibleCopyButton(node)) {
+					hasVisibleButton = true;
+					break;
+				}
+
+				node = node.nextElementSibling;
+			}
+
+			setElementVisible(title, hasVisibleButton);
+
+			const previousElement = title.previousElementSibling;
+			if (previousElement && previousElement.tagName === "HR") {
+				setElementVisible(previousElement, hasVisibleButton);
+			}
+		});
+	}
+
+	function updateSearchResults() {
+		const searchBox = document.getElementById("searchBox");
+		const searchCount = document.getElementById("search-count");
+		const noResults = document.getElementById("no-search-results");
+		const rawQuery = searchBox ? searchBox.value.trim() : "";
+		const query = normalizeSearchText(rawQuery);
+		const buttons = getCopyButtons();
+		let visibleCount = 0;
+
+		buttons.forEach(button => {
+			const ul = button.nextElementSibling;
+			const matches = !query || buttonSearchText(button).includes(query);
+
+			setElementVisible(button, matches);
+			if (ul && ul.tagName === "UL") setElementVisible(ul, false);
+			if (matches) visibleCount++;
+		});
+
+		updateSectionVisibility();
+
+		if (searchCount) {
+			searchCount.textContent = rawQuery ? (visibleCount + " matching button" + (visibleCount === 1 ? "" : "s")) : "";
+		}
+
+		if (noResults) {
+			setElementVisible(noResults, rawQuery && visibleCount === 0);
+		}
+	}
+
+	function setupSearch() {
+		const searchBox = document.getElementById("searchBox");
+		const clearButton = document.getElementById("clearSearchButton");
+
+		if (!searchBox) return;
+
+		searchBox.addEventListener("input", updateSearchResults);
+
+		searchBox.addEventListener("keydown", function (event) {
+			if (event.key === "Escape") {
+				searchBox.value = "";
+				updateSearchResults();
+				searchBox.blur();
+			}
+		});
+
+		if (clearButton) {
+			clearButton.addEventListener("click", function () {
+				searchBox.value = "";
+				updateSearchResults();
+				searchBox.focus();
+			});
+		}
+	}
 
 	function copyToClipboard(element) {
 		
@@ -1628,6 +1960,8 @@
 		};
 
 	document.addEventListener("DOMContentLoaded", function () {
+
+		setupSearch();
 
 	    const container = document.getElementById("tunes");
 	    if (!container) return;
@@ -1674,31 +2008,30 @@
 	    let sectionWrapper = null;
 
 	    items.forEach(item => {
+        // If new letter group
+        if (item.letter !== currentLetter) {
+            currentLetter = item.letter;
 
-	        // If new letter group
-	        if (item.letter !== currentLetter) {
-	            currentLetter = item.letter;
+            // End previous wrapper
+            if (sectionWrapper) {
+                newContent.appendChild(sectionWrapper);
+            }
 
-	            // End previous wrapper
-	            if (sectionWrapper) {
-	                newContent.appendChild(sectionWrapper);
-	            }
+            // Start new wrapper
+            sectionWrapper = document.createElement("div");
+            sectionWrapper.className = "tune-letter-section-" + (colorIndex % 2);
+            colorIndex++;
 
-	            // Start new wrapper
-	            sectionWrapper = document.createElement("div");
-	            sectionWrapper.className = "tune-letter-section-" + (colorIndex % 2);
-	            colorIndex++;
+            // Add letter header
+            const header = document.createElement("div");
+            header.className = "tune-letter-header";
+            header.textContent = currentLetter;
+            sectionWrapper.appendChild(header);
+        }
 
-	            // Add letter header
-	            const header = document.createElement("div");
-	            header.className = "tune-letter-header";
-	            header.textContent = currentLetter;
-	            sectionWrapper.appendChild(header);
-	        }
-
-	        // Insert the actual tune elements
-	        sectionWrapper.appendChild(item.button);
-	        sectionWrapper.appendChild(item.ul);
+        // Insert the actual tune elements
+        sectionWrapper.appendChild(item.button);
+        sectionWrapper.appendChild(item.ul);
 	    });
 
 	    // Append last wrapper
@@ -1708,10 +2041,10 @@
 	    container.innerHTML = "";
 	    container.appendChild(newContent);
 
+		updateSearchResults();
+
 	});
 
 	</script>
-
 	
-	</html>
-
+</html>
