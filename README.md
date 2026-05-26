@@ -1,7 +1,7 @@
 
 # zoombuttons
 
-For those of you hosting Zoom sessions, if you are like me, you are often having to copy and paste the same text each week into the chat for tunes or recurring event links.  
+For those of you hosting online Zoom sessions, if you are like me, you are often having to copy and paste the same text each week into the chat for tunes or recurring event links.  
 
 I had initially done that by keeping a text document open in another window specific for each event, and then manually selecting, copying the text, clicking back into the Zoom chat, and then pasting the text.
 
