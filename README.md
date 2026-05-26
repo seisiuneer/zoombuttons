@@ -22,7 +22,7 @@ Since it's a web page, you'll either need to host zoombuttons.html somewhere, or
 I've tested it with Firefox and Chrome on Windows and on iOS Safari, so should work on Safari on Mac as well.
 
 # Customization 
-
+```html
 HOW TO ADD A NEW ZOOM BUTTON
 
 Each button is made from two matching parts:
@@ -61,4 +61,5 @@ automatically sorted alphabetically when the page loads.
 
 - The search box searches only the visible button titles, not
 the hidden copied text inside the <ul> lists.
+```
 
