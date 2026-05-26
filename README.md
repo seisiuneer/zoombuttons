@@ -1,9 +1,7 @@
 
 # zoombuttons
 
-For those of you hosting Zoom sessions, if you are like me, you are often having to copy and paste the same text each week into the chat.  
-
-For example, in John Whelan's "Taking Time" and tune teaching events that I co-host, I periodically post his tip jar and Master Sessions info multiple times over the course of the event.
+For those of you hosting Zoom sessions, if you are like me, you are often having to copy and paste the same text each week into the chat for tunes or recurring event links.  
 
 I've typically done that by keeping a text document open in another window specific for each event, and then manually selecting, copying the text, clicking back into the Zoom chat, and then pasting the text.  
 
@@ -25,17 +23,42 @@ I've tested it with Firefox and Chrome on Windows and on iOS Safari, so should w
 
 # Customization 
 
-It's very simple to customize or extend zoombuttons.html to meet your requirements.
+HOW TO ADD A NEW ZOOM BUTTON
 
-To customize zoombuttons.html to your requirements there are two areas that need to be modified: the buttons themselves, and the text that is copied to the clipboard when clicking the buttons.
+Each button is made from two matching parts:
 
-Each button has an inline onclick handler that calls a function called "copyToClipboard()" that includes the absolute ID of a ul element that in turn contains one or more li elements.
-    
-copyToClipboard() reads the contents of the ul with the absolute ID passed in, formats the text with each li element turned into a line of text, creates a temporary text area, pastes the text into the text area, copies it to the system clipboard, then destroys the text area.
+1. A <button> that the user sees and clicks.
+2. A hidden <ul> list immediately after the button that contains
+ the text that will be copied to the clipboard.
 
-At startup, all tunes in the tunes div are sorted by the button text.
+Example:
 
-At that point, the text can be pasted into Zoom or any other program.
+<button onclick="copyToClipboard('#mynewitem')">My New Button</button>
+<ul id="mynewitem">
+	<li>This is the first line copied to the clipboard.</li>
+	<li></li>
+	<li>This is a new paragraph after a blank line.</li>
+	<li>https://example.com</li>
+</ul>
 
-You should not have to modify the copyToClipboard() function, only the buttons and ul lists to create your own buttons. 
+Important details:
+
+- The button's copyToClipboard('#mynewitem') value must match
+the <ul id="mynewitem"> value exactly.
+
+- Use a unique ID for each item. Do not reuse an ID that is
+already used elsewhere in the file.
+
+- Put each line of copied text inside its own <li>...</li>.
+
+- Use an empty <li></li> when you want a blank line in the
+copied text.
+
+- Add normal general-purpose buttons in the main button area.
+
+- Add tune buttons inside <div id="tunes">. Tune buttons are
+automatically sorted alphabetically when the page loads.
+
+- The search box searches only the visible button titles, not
+the hidden copied text inside the <ul> lists.
 
